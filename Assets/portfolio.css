@@ -1,440 +1,3 @@
-/* ==========================================================================
-   GianTecH Premium Motion Architecture & Color System Redesign
-   Vibrant dark gradients, hover tilts, stacking layouts, and custom keyframes
-   ========================================================================== */
-
-:root {
-  /* Color Architecture */
-  --giantech-primary: #00F2FE;       /* Neon Cyan */
-  --giantech-secondary: #38bdf8;     /* Sky Blue */
-  --giantech-highlight: #ff00aa;     /* Neon Pink/Magenta */
-  --giantech-bg: #08090a;
-  
-  /* Gradients */
-  --grad-premium: linear-gradient(135deg, var(--giantech-primary) 0%, var(--giantech-secondary) 50%, var(--giantech-highlight) 100%);
-  --grad-text: linear-gradient(to right, #ffffff 30%, var(--giantech-primary) 70%, var(--giantech-highlight) 100%);
-  
-  /* Spacing and Shadows */
-  --card-radius: 20px;
-  --portfolio-card-bg: rgba(13, 14, 16, 0.4);
-  --portfolio-border: rgba(255, 255, 255, 0.08);
-  --portfolio-border-glow: rgba(0, 242, 254, 0.25);
-  --portfolio-border-highlight: rgba(255, 0, 170, 0.35);
-  
-  --shadow-premium: 
-    0 30px 60px rgba(0, 0, 0, 0.8),
-    0 0 80px rgba(0, 242, 254, 0.02),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  --shadow-premium-hover: 
-    0 40px 80px rgba(0, 0, 0, 0.9),
-    0 0 50px rgba(0, 242, 254, 0.1),
-    0 0 80px rgba(255, 0, 170, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-/* ==========================================================================
-   Animated Background Ambient Light
-   ========================================================================== */
-.motion-ambient-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.motion-glow-orb {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.2;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  will-change: transform;
-}
-
-.motion-glow-orb.orb-cyan {
-  background: radial-gradient(circle, var(--giantech-primary) 0%, transparent 70%);
-  top: -10%;
-  left: 10%;
-  animation: float-orb-1 25s infinite alternate ease-in-out;
-}
-
-.motion-glow-orb.orb-pink {
-  background: radial-gradient(circle, var(--giantech-highlight) 0%, transparent 70%);
-  bottom: 10%;
-  right: 10%;
-  animation: float-orb-2 20s infinite alternate ease-in-out;
-}
-
-@keyframes float-orb-1 {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(100px, 80px) scale(1.1) rotate(45deg); }
-  100% { transform: translate(-50px, 150px) scale(0.9) rotate(90deg); }
-}
-
-@keyframes float-orb-2 {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-120px, -60px) scale(0.9) rotate(-30deg); }
-  100% { transform: translate(60px, -150px) scale(1.1) rotate(-60deg); }
-}
-
-/* ==========================================================================
-   Horizontal Scroll & Stacking Cards Layout
-   ========================================================================== */
-.portfolio-scroll-wrapper {
-  position: relative;
-  background-color: var(--giantech-bg);
-  /* control total scroll time */
-  height: 480vh; 
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.portfolio-sticky-container {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.portfolio-horizontal-track {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  padding-left: 10vw;
-  /* Ensure space for the stack panel */
-  padding-right: 0;
-  height: 100%;
-  width: max-content;
-  will-change: transform;
-  box-sizing: border-box;
-}
-
-.portfolio-intro-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 32vw;
-  min-width: 380px;
-  margin-right: 8vw;
-  z-index: 10;
-  box-sizing: border-box;
-}
-
-.portfolio-tag {
-  color: var(--giantech-primary);
-  font-family: var(--font-mono, monospace);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-/* Staggered Heading Reveals */
-.portfolio-title-reveal {
-  font-family: var(--font-sans), sans-serif;
-  font-size: clamp(34px, 4.5vw, 60px);
-  line-height: 1.1;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  color: #fff;
-  margin: 0;
-}
-
-.portfolio-title-reveal span {
-  display: block;
-  opacity: 0.15;
-  transform: translateY(30px) rotate(1deg);
-  transform-origin: left center;
-  will-change: opacity, transform;
-}
-
-/* Cards Panels */
-.portfolio-card-panel {
-  flex-shrink: 0;
-  margin-right: 6vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.portfolio-card {
-  position: relative;
-  width: 52vw;
-  max-width: 780px;
-  min-width: 480px;
-  aspect-ratio: 16 / 10;
-  background-color: var(--portfolio-card-bg);
-  border: 1px solid var(--portfolio-border);
-  border-radius: var(--card-radius);
-  box-shadow: var(--shadow-premium);
-  overflow: hidden;
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-  box-sizing: border-box;
-  will-change: transform, box-shadow;
-}
-
-.portfolio-card:hover {
-  border-color: var(--portfolio-border-glow);
-  box-shadow: var(--shadow-premium-hover);
-}
-
-.portfolio-card-image-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: var(--card-radius);
-}
-
-.portfolio-card-image-wrap img {
-  width: 116%; /* oversized for parallax scrolling */
-  height: 116%;
-  object-fit: cover;
-  position: absolute;
-  top: -8%;
-  left: -8%;
-  will-change: transform;
-}
-
-/* ==========================================================================
-   Premium Stacking Cards Layout
-   ========================================================================== */
-.portfolio-stack-panel {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  flex-shrink: 0;
-  box-sizing: border-box;
-}
-
-.portfolio-stack-container {
-  position: relative;
-  width: 52vw;
-  max-width: 780px;
-  min-width: 480px;
-  aspect-ratio: 16 / 10;
-  box-sizing: border-box;
-}
-
-.portfolio-stack-container .stack-card {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  will-change: transform, opacity;
-}
-
-.portfolio-stack-container .stack-card.card-top {
-  border-color: var(--portfolio-border-highlight);
-  box-shadow: 0 40px 100px rgba(255, 0, 170, 0.15), 0 0 100px rgba(0, 242, 254, 0.05);
-}
-
-/* Safari Browser Mockup */
-.browser-mockup {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  border-radius: var(--card-radius);
-  overflow: hidden;
-}
-
-.browser-header {
-  height: 44px;
-  background-color: rgba(14, 15, 17, 0.9);
-  border-bottom: 1px solid var(--portfolio-border);
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  gap: 14px;
-  box-sizing: border-box;
-}
-
-.browser-dots {
-  display: flex;
-  gap: 8px;
-}
-
-.browser-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.browser-dot.red { background-color: #ff5f56; }
-.browser-dot.yellow { background-color: #ffbd2e; }
-.browser-dot.green { background-color: #27c93f; }
-
-.browser-address-bar {
-  flex-grow: 1;
-  max-width: 420px;
-  height: 24px;
-  background-color: rgba(28, 29, 31, 0.7);
-  border: 1px solid var(--portfolio-border);
-  border-radius: 8px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  font-family: var(--font-sans), sans-serif;
-  font-size: 11px;
-  color: var(--portfolio-text-secondary);
-  opacity: 0.9;
-  letter-spacing: 0.02em;
-  box-sizing: border-box;
-}
-
-.browser-address-bar svg {
-  width: 10px;
-  height: 10px;
-  fill: currentColor;
-}
-
-.browser-content {
-  position: relative;
-  flex-grow: 1;
-  width: 100%;
-  height: calc(100% - 44px);
-  overflow: hidden;
-  background-color: #08090a;
-}
-
-.browser-content img,
-.browser-content video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Captions overlay */
-.portfolio-card-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 26px 30px;
-  background: linear-gradient(to top, rgba(8, 9, 10, 0.98) 0%, rgba(8, 9, 10, 0.7) 60%, transparent 100%);
-  border-bottom-left-radius: var(--card-radius);
-  border-bottom-right-radius: var(--card-radius);
-  transform: translateY(12px);
-  opacity: 0;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-  z-index: 5;
-}
-
-.portfolio-card:hover .portfolio-card-caption {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.portfolio-card-caption h4 {
-  margin: 0 0 4px 0;
-  font-size: 17px;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: -0.01em;
-}
-
-.portfolio-card-caption p {
-  margin: 0;
-  font-size: 13px;
-  color: var(--portfolio-text-secondary);
-}
-
-/* ==========================================================================
-   Changelog timeline scroll interactions
-   ========================================================================== */
-/* Set line transform origin for GSAP scaleY */
-.Changelog_changelogLine__kkNMs {
-  transform-origin: top center !important;
-  will-change: transform;
-  background: linear-gradient(to bottom, var(--giantech-primary), var(--giantech-highlight)) !important;
-}
-
-.Changelog_changelogIndicator__YGOhI {
-  transition: background-color 0.4s ease, box-shadow 0.4s ease !important;
-  will-change: background-color, box-shadow;
-}
-
-.Changelog_changelogIndicator__YGOhI.active {
-  background-color: var(--giantech-primary) !important;
-  box-shadow: 0 0 15px var(--giantech-primary), 0 0 30px var(--giantech-primary) !important;
-}
-
-.Changelog_changelogItem__ZoKah {
-  opacity: 0.2;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.Changelog_changelogItem__ZoKah.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ==========================================================================
-   Features Cards animations
-   ========================================================================== */
-.Benefits_benefit__IHWje {
-  position: relative;
-  will-change: transform, box-shadow, border-color;
-  transform-style: preserve-3d;
-}
-
-/* Shimmer overlay for benefits card on hover */
-.Benefits_benefit__IHWje::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 40%);
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.Benefits_benefit__IHWje:hover::before {
-  opacity: 1;
-}
-
-/* Unique highlight card in benefits */
-.Benefits_benefit__IHWje:nth-child(2):hover {
-  border-color: rgba(255, 0, 170, 0.35) !important;
-  box-shadow: 0 12px 30px rgba(255, 0, 170, 0.08) !important;
-}
-
 
 /* ==========================================================================
    Mobile & Tablet Responsive Fallbacks
@@ -465,6 +28,7 @@
     height: auto;
     padding-left: 5vw;
     padding-right: 5vw;
+    will-change: auto;
   }
   
   /* Make all panels snap targets */
@@ -477,19 +41,30 @@
   /* Adjust widths for mobile */
   .portfolio-intro-panel {
     width: 85vw;
-    min-width: unset;
+    min-width: 0;
     margin-right: 5vw;
     margin-bottom: 20px;
   }
   
   .portfolio-card {
     width: 85vw;
-    min-width: unset;
+    min-width: 0;
     aspect-ratio: 4 / 3;
+    will-change: auto;
   }
   
   .portfolio-card-panel {
     margin-right: 5vw;
+  }
+  
+  /* Remove parallax oversized images on mobile and prevent memory crashes */
+  .portfolio-card-image-wrap img {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    will-change: auto;
+    transform: none !important;
   }
   
   /* Convert the stack panel to normal flex row for mobile */
@@ -507,7 +82,7 @@
     height: auto;
     aspect-ratio: auto;
     gap: 5vw;
-    min-width: unset;
+    min-width: 0;
   }
   
   .portfolio-stack-container .stack-card {
@@ -523,5 +98,12 @@
   .portfolio-title-reveal span {
     opacity: 1;
     transform: none;
+    will-change: auto;
+  }
+  
+  /* Fix browser rendering bugs on mobile */
+  .portfolio-scroll-wrapper * {
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
   }
 }
