@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//GianTecH Empire//Consultation Scheduler//EN
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+UID:booking_955178@giantech.app
+DTSTAMP:20260622T063147Z
+DTSTART:20260625T103000Z
+DTEND:20260625T111500Z
+SUMMARY:GianTecH Consultation: Tchuekam Agent
+DESCRIPTION:Hello Test Client,\n\nYour technical consultation with GianTecH Empire is confirmed.\n\nMeeting Link: https://meet.google.com/gt-consult-test-cli\n\nClient Notes: Testing integration from products page.
+LOCATION:https://meet.google.com/gt-consult-test-cli
+ORGANIZER;CN="GianTecH Empire Team":mailto:support@giantech.app
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Test Client":mailto:tchuekrostand@gmail.com
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR

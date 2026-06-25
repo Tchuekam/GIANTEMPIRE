@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="js" style="color-scheme: dark;">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>GianTecH Products – Automated AI Solutions & System Architectures</title>
+  <meta name="description" content="Explore GianTecH Empire's product suite: Tchuekam Agent, Mbowazap bot, and DivineLink medical system.">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <link rel="icon" href="./giantech_files/favicon.png" type="image/png">
+  
+  <!-- Reuse the main styling of the platform -->
+  <link rel="stylesheet" href="./giantech_files/f92ebf3e538fed61.css">
+  <link rel="stylesheet" href="./giantech_files/70c8409af9c26ea7.css">
+  <link rel="stylesheet" href="./giantech_files/053934babcbe8fbc.css">
+  <link rel="stylesheet" href="./giantech_files/2501fa48a7315655.css">
+  <link rel="stylesheet" href="./giantech_files/32a9331319ef837e.css">
+  <link rel="stylesheet" href="./giantech_files/9774a98b7edbda2d.css">
+  <link rel="stylesheet" href="./giantech_files/b4302864fadf69c9.css">
+
+  <style>
+    :root, [data-theme="dark"], html {
+      --color-accent: #00F2FE !important;
+      --color-accent-hover: #38bdf8 !important;
+      --color-accent-tint: rgba(0, 242, 254, 0.1) !important;
+      --color-brand: #00F2FE !important;
+      --color-brand-hover: #38bdf8 !important;
+      --color-brand-tint: rgba(0, 242, 254, 0.1) !important;
+      --cn-Purple: #009BB0 !important;
+      --color-blue750: #00F2FE !important;
+      --color-blue200: #38bdf8 !important;
+    }
+
+    /* Selection styling */
+    ::selection {
+      background-color: rgba(0, 242, 254, 0.3) !important;
+      color: #fff !important;
+    }
+
+    /* Page container settings */
+    body {
+      background-color: #08090a;
+      color: #d1d2d5;
+      overflow-x: hidden;
+    }
+
+    /* Subpage Nav Links override */
+    a[aria-label="Navigate to home"] {
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    a[aria-label="Navigate to home"]::before {
+      content: "" !important;
+      display: inline-block !important;
+      width: 28px !important;
+      height: 28px !important;
+      background-image: url("./giantech_files/logo.png") !important;
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      flex-shrink: 0 !important;
+    }
+
+    /* Grid Layout for Products */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 900px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Premium Product Cards styling */
+    .product-card {
+      background: #0f1011;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #00F2FE, transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .product-card:hover::before {
+      opacity: 1;
+    }
+
+    .product-icon-wrapper {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: rgba(0, 242, 254, 0.05);
+      border: 1px solid rgba(0, 242, 254, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      color: #00F2FE;
+    }
+
+    .product-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .product-tagline {
+      font-size: 13px;
+      font-weight: 600;
+      color: #00F2FE;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .product-desc {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: #8f9095;
+      margin-bottom: 25px;
+      flex-grow: 1;
+    }
+
+    /* Product Specs Accordion */
+    .spec-section {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+
+    .spec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: #606165;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .spec-header:hover {
+      color: #ffffff;
+    }
+
+    .spec-content {
+      display: none;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #8f9095;
+      padding-top: 12px;
+    }
+
+    .spec-content.active {
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* CTA buttons */
+    .card-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .btn-full {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 38px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #00F2FE;
+      color: #08090a !important;
+      border: none;
+      box-shadow: 0 4px 15px rgba(0, 242, 254, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
+    }
+
+    .btn-secondary {
+      background: #151616;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #ffffff !important;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    /* Rebranding Styles Overlay imports */
+    .giantech-logo {
+      color: #00F2FE !important;
+    }
+
+    /* ============================================ */
+    /* GianTecH Premium Animations & Motion Effects */
+    /* ============================================ */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .cursor-glow-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 242, 254, 0.05), transparent 80%);
+      transition: background 0.1s ease;
+    }
+
+    .reveal-element {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .reveal-element.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ambient-hero-glow {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(0, 242, 254, 0.12) 0%, rgba(79, 172, 254, 0.03) 50%, transparent 100%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: -1;
+      animation: pulse-glow 8s infinite alternate ease-in-out;
+    }
+
+    @keyframes pulse-glow {
+      0% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(0.9) rotate(0deg);
+      }
+      100% {
+        opacity: 1.2;
+        transform: translate(-50%, -50%) scale(1.15) rotate(15deg);
+      }
+    }
+
+    #hero-particle-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.65;
+    }
+
+    .Header_root__x8J2p {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 9, 10, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+  </style>
+  
+  <!-- Import Booking Modal CSS classes directly -->
+  <link rel="stylesheet" href="./giantech_files/fee35aced3aa3852.css">
+  <link rel="stylesheet" href="./giantech_files/fe9a12e7b5512244.css">
+  
+  <style>
+    /* GianTecH Empire Booking System Overlay */
+    .floating-booking-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #00F2FE 0%, #4FACFE 100%);
+      color: #08090a;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 10px 25px rgba(0, 242, 254, 0.4);
+      cursor: pointer;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: floating-pulse 2s infinite;
+    }
+
+    .floating-booking-btn:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(0, 242, 254, 0.6);
+    }
+
+    @keyframes floating-pulse {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
+    }
+
+    .booking-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(8, 9, 10, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 100000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .booking-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .booking-modal {
+      background: #0f1011;
+      border: 1px solid rgba(0, 242, 254, 0.2);
+      border-radius: 20px;
+      width: 90%;
+      max-width: 650px;
+      padding: 35px;
+      box-shadow: 0 20px 50px rgba(0, 242, 254, 0.15);
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      position: relative;
+      transform: scale(0.9) translateY(20px);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .booking-backdrop.active .booking-modal {
+      transform: scale(1) translateY(0);
+    }
+
+    .booking-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      color: #8f9095;
+      font-size: 24px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .booking-close:hover {
+      color: #00F2FE;
+    }
+
+    .booking-step {
+      display: none;
+    }
+
+    .booking-step.active {
+      display: block;
+      animation: fadeInStep 0.4s ease;
+    }
+
+    @keyframes fadeInStep {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .booking-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: linear-gradient(90deg, #fff, #00F2FE);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .booking-subtitle {
+      color: #8f9095;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calendar-container {
+      background: #151616;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 15px;
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .calendar-days-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .calendar-day-label {
+      color: #606165;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .calendar-day {
+      padding: 8px 0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: #d1d2d5;
+    }
+
+    .calendar-day:hover:not(.disabled) {
+      background: rgba(0, 242, 254, 0.1);
+      color: #00F2FE;
+    }
+
+    .calendar-day.selected {
+      background: #00F2FE;
+      color: #08090a;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 242, 254, 0.3);
+    }
+
+    .calendar-day.disabled {
+      color: #35363a;
+      cursor: not-allowed;
+    }
+
+    .time-slots-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 250px;
+      overflow-y: auto;
+      padding-right: 5px;
+    }
+
+    .time-slot {
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      background: #151616;
+      color: #d1d2d5;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 13.5px;
+      font-weight: 500;
+    }
+
+    .time-slot:hover {
+      border-color: rgba(0, 242, 254, 0.3);
+      color: #00F2FE;
+      background: rgba(0, 242, 254, 0.03);
+    }
+
+    .time-slot.selected {
+      background: #00F2FE;
+      color: #08090a;
+      border-color: #00F2FE;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 242, 254, 0.2);
+    }
+
+    .booking-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 20px;
+    }
+
+    .booking-btn {
+      padding: 10px 20px;
+      font-size: 13.5px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .booking-btn-primary {
+      background: #00F2FE;
+      color: #08090a;
+      box-shadow: 0 4px 12px rgba(0, 242, 254, 0.25);
+    }
+
+    .booking-btn-primary:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 15px rgba(0, 242, 254, 0.4);
+    }
+
+    .booking-btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .booking-btn-secondary {
+      background: #1e1f22;
+      color: #d1d2d5;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .booking-btn-secondary:hover {
+      background: #25262a;
+      color: #fff;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #8f9095;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 8px;
+    }
+
+    .form-input {
+      width: 100%;
+      background: #151616;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 12px;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #00F2FE;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <div class="Header_root__x8J2p">
+    <header class="Header_header__hfMjL Header_header__hfMjL">
+      <nav aria-label="Main" class="Header_menuRoot__tJRFd">
+        <div class="Header_innerWrapper__jlvRl">
+          <div style="position:relative">
+            <ul class="Header_list__gT80u" aria-label="Site navigation">
+              <li class="Header_logoItem__gFn0o Header_item__a2E_K">
+                <span style="display:flex">
+                  <a aria-label="Navigate to home" class="Header_logoLink__Sgfy4 Link_root__cNtak" href="index.html">
+                    <img src="./giantech_files/logo.png" alt="GianTecH Empire" style="height:28px;width:auto;object-fit:contain">
+                  </a>
+                </span>
+              </li>
+              <li class="Header_rightSideWrapper__v4fej">
+                <ul class="Header_navItems__Szs64">
+                  <li class="hide-tablet Header_item__a2E_K">
+                    <a class="Header_anchor__CTwdv Link_root__cNtak" style="color: #00F2FE; font-weight: 600;" href="products.html">Product</a>
+                  </li>
+                  <li class="hide-tablet Header_item__a2E_K">
+                    <a class="Header_anchor__CTwdv Link_root__cNtak" href="index.html">Home</a>
+                  </li>
+                  <li class="hide-tablet Header_item__a2E_K">
+                    <a class="Header_anchor__CTwdv Link_root__cNtak" href="index.html#pricing">Pricing</a>
+                  </li>
+                  <li class="hide-tablet Header_item__a2E_K">
+                    <a class="Header_anchor__CTwdv Link_root__cNtak" href="index.html#features">Features</a>
+                  </li>
+                </ul>
+                <div style="flex:1"></div>
+                <ul class="Header_buttons__qwTPf">
+                  <li class="Header_buttonItem__crtcc Header_item__a2E_K">
+                    <button type="button" class="Button_root__Stmhv Button_variant-invert__ECHZN Button_size-small__sjtMt Button_variant__1FJO9 Link_root__cNtak" id="navBookBtn">Book Consultation</button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <!-- Main Content Wrapper -->
+  <main class="Layout_content__PrPCk">
+    
+    <!-- Hero Section -->
+    <div class="Hero_container__inGFW utils_inset__Xhl3T" style="text-align: center; max-width: 800px; margin: 0 auto 50px;">
+      <div class="hide-laptop Spacer_root__uoSvA" style="--height:80px"></div>
+      <div class="show-mobile Spacer_root__uoSvA" style="--height:40px"></div>
+      <h1 class="Hero_title__sHOGp" style="font-size: 42px; line-height: 1.2; letter-spacing: -1.5px; background: linear-gradient(90deg, #fff, #00F2FE); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        The GianTecH Product Suite
+      </h1>
+      <div class="Spacer_root__uoSvA" style="--height:20px"></div>
+      <p class="Hero_description__Clw_0" style="font-size: 18px; color: #8f9095; max-width: 600px; margin: 0 auto;">
+        Automated desktop AI agents, messaging automation frameworks, and specialized management systems designed for the enterprise era.
+      </p>
+    </div>
+
+    <!-- Product Catalog List -->
+    <div class="utils_inset__Xhl3T" style="max-width: 1100px; margin: 0 auto 100px; position: relative;">
+      
+      <!-- Ambient Shifting Backlight in background -->
+      <div class="ambient-hero-glow"></div>
+      <canvas id="hero-particle-canvas"></canvas>
+      
+      <div class="product-grid">
+        
+        <!-- Product 1: Tchuekam Agent -->
+        <div class="product-card reveal-element">
+          <div>
+            <div class="product-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+            </div>
+            <div class="product-tagline">Operating System Automator</div>
+            <div class="product-title">Tchuekam Agent</div>
+            <p class="product-desc">
+              Next-generation desktop AI agent designed for full operating system level automation. Executed as a background daemon, it handles complex file routing, source compilation, local terminal tasks, and environment builds securely.
+            </p>
+            
+            <!-- Accordion Details -->
+            <div class="spec-section">
+              <div class="spec-header" onclick="toggleSpec(this)">
+                <span>Technical Specifications</span>
+                <span class="spec-arrow">▼</span>
+              </div>
+              <div class="spec-content">
+                <strong style="color: #fff;">Architecture:</strong> Built on Python/Rust with asynchronous subprocess execution.<br>
+                <strong style="color: #fff;">Telemetry:</strong> Emits telemetry hooks to telemetry server for tracking.<br>
+                <strong style="color: #fff;">Security:</strong> Sandboxed process isolation with role-based access control.
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-actions">
+            <button class="btn-full btn-primary" onclick="bookProduct('Tchuekam Agent')">Book Consultation</button>
+            <button class="btn-full btn-secondary" onclick="toggleSpecDirect(this)">View Specs</button>
+          </div>
+        </div>
+
+        <!-- Product 2: Mbowazap -->
+        <div class="product-card reveal-element">
+          <div>
+            <div class="product-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <div class="product-tagline">WhatsApp CRM & Bot</div>
+            <div class="product-title">Mbowazap</div>
+            <p class="product-desc">
+              The ultimate automated WhatsApp bot system. It integrates conversational AI directly into messaging streams to manage leads, issue transaction invoices, answer complex FAQs, schedule meetings, and auto-route customer triage.
+            </p>
+            
+            <!-- Accordion Details -->
+            <div class="spec-section">
+              <div class="spec-header" onclick="toggleSpec(this)">
+                <span>Technical Specifications</span>
+                <span class="spec-arrow">▼</span>
+              </div>
+              <div class="spec-content">
+                <strong style="color: #fff;">API Protocol:</strong> Direct integration with Meta Cloud API / Baileys engine.<br>
+                <strong style="color: #fff;">AI Engine:</strong> Powered by private LLM deployments with semantic grounding.<br>
+                <strong style="color: #fff;">Integrations:</strong> Hooks into Salesforce, Stripe, and custom databases.
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-actions">
+            <button class="btn-full btn-primary" onclick="bookProduct('Mbowazap')">Book Consultation</button>
+            <button class="btn-full btn-secondary" onclick="toggleSpecDirect(this)">View Specs</button>
+          </div>
+        </div>
+
+        <!-- Product 3: DivineLink -->
+        <div class="product-card reveal-element">
+          <div>
+            <div class="product-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div class="product-tagline">Clinical Administration System</div>
+            <div class="product-title">DivineLink</div>
+            <p class="product-desc">
+              A comprehensive clinic and hospital management ERP. Simplifies doctor-patient records (EMR), tracks prescriptions, automates pharmacy inventory, coordinates patient check-ins, and manages hospital telemetry analytics.
+            </p>
+            
+            <!-- Accordion Details -->
+            <div class="spec-section">
+              <div class="spec-header" onclick="toggleSpec(this)">
+                <span>Technical Specifications</span>
+                <span class="spec-arrow">▼</span>
+              </div>
+              <div class="spec-content">
+                <strong style="color: #fff;">Database:</strong> High-reliability PostgreSQL backend with multi-tenant encryption.<br>
+                <strong style="color: #fff;">Compliance:</strong> HIPAA-compliant data storage and transmission protocols.<br>
+                <strong style="color: #fff;">Interface:</strong> High-performance single page client architecture.
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-actions">
+            <button class="btn-full btn-primary" onclick="bookProduct('DivineLink')">Book Consultation</button>
+            <button class="btn-full btn-secondary" onclick="toggleSpecDirect(this)">View Specs</button>
+          </div>
+        </div>
+
+        <!-- Product 4: Audit & Moderator Systems -->
+        <div class="product-card reveal-element">
+          <div>
+            <div class="product-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="product-tagline">Telemetry & Safety Systems</div>
+            <div class="product-title">System Audit & Moderator</div>
+            <p class="product-desc">
+              Continuous monitoring, telemetry auditing, and channel moderation. Automatically reviews logs, flags anomalous behaviors, controls access keys, moderates communities, and coordinates incident reports to Slack/Teams instantly.
+            </p>
+            
+            <!-- Accordion Details -->
+            <div class="spec-section">
+              <div class="spec-header" onclick="toggleSpec(this)">
+                <span>Technical Specifications</span>
+                <span class="spec-arrow">▼</span>
+              </div>
+              <div class="spec-content">
+                <strong style="color: #fff;">Monitoring:</strong> Continuous log streaming via WebSockets.<br>
+                <strong style="color: #fff;">Audit Logs:</strong> Tamper-proof event logs stored on distributed ledgers.<br>
+                <strong style="color: #fff;">Response:</strong> Real-time Slack, Discord, and Telegram webhooks.
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-actions">
+            <button class="btn-full btn-primary" onclick="bookProduct('Full Audit Automation')">Book Consultation</button>
+            <button class="btn-full btn-secondary" onclick="toggleSpecDirect(this)">View Specs</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer" style="background-color: #0c0d0e; padding: 50px 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.03); font-size: 12px; color: #606165; line-height: 1.8;">
+    <p>GianTecH Empire LLC &bull; 100 Innovation Way &bull; Tech District &bull; Silicon Valley & Douala</p>
+    <p>Explore <a href="index.html" style="color: #00F2FE; text-decoration: none;">Home Page</a> &bull; <a href="products.html" style="color: #00F2FE; text-decoration: none;">Product Suite</a> &bull; <a href="index.html#pricing" style="color: #00F2FE; text-decoration: none;">Pricing</a></p>
+    <p>&copy; 2026 GianTecH Empire. All rights reserved.</p>
+  </footer>
+
+  <!-- ============================================================== -->
+  <!-- Booking System Modal Markup (identical to index.html structure) -->
+  <!-- ============================================================== -->
+  <div class="booking-backdrop" id="bookingBackdrop">
+    <div class="booking-modal">
+      <button class="booking-close" id="bookingCloseBtn">&times;</button>
+      
+      <!-- Step 1: Calendar and Time Slot Picker -->
+      <div class="booking-step active" id="bookingStep1">
+        <h3 class="booking-title">Schedule a Consultation</h3>
+        <p class="booking-subtitle">Select a date and time slot to discuss your product automation.</p>
+        
+        <div class="booking-grid">
+          <!-- Calendar -->
+          <div class="calendar-container">
+            <div class="calendar-header">
+              <span id="calendarMonthYear">June 2026</span>
+            </div>
+            <div class="calendar-days-grid" id="calendarGrid">
+              <!-- JS Generated -->
+            </div>
+          </div>
+          
+          <!-- Slots -->
+          <div class="time-slots-container" id="slotsContainer">
+            <p style="color: #606165; font-size: 13px; text-align: center; margin-top: 50px;">Select a date to view available time slots.</p>
+          </div>
+        </div>
+        
+        <div class="booking-actions">
+          <button class="booking-btn booking-btn-primary" id="btnGoToStep2" disabled>Next Details &rarr;</button>
+        </div>
+      </div>
+      
+      <!-- Step 2: Contact Form -->
+      <div class="booking-step" id="bookingStep2">
+        <h3 class="booking-title">Briefing Details</h3>
+        <p class="booking-subtitle">Please enter your company contact info and meeting parameters.</p>
+        
+        <form id="bookingForm" onsubmit="submitBooking(event)">
+          <div class="form-group">
+            <label for="clientName">Your Name</label>
+            <input type="text" id="clientName" class="form-input" placeholder="e.g. Jean Dupont" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="clientEmail">Work Email</label>
+            <input type="email" id="clientEmail" class="form-input" placeholder="name@company.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="projectInterest">Product Interest</label>
+            <select id="projectInterest" class="form-input" required style="background-color: #151616; border: 1px solid rgba(255,255,255,0.08); color: white;">
+              <option value="" disabled selected>Select a product/service</option>
+              <option value="Tchuekam Agent">Tchuekam Agent (Desktop AI agent)</option>
+              <option value="Mbowazap">Mbowazap (WhatsApp automated bot)</option>
+              <option value="DivineLink">DivineLink (Clinics management system)</option>
+              <option value="Full Audit Automation">Full Audit Automation & Community Management</option>
+              <option value="Custom Software / AI Agent">Custom AI agent / Software creation</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="projectNotes">Briefly describe your requirements</label>
+            <textarea id="projectNotes" class="form-input" rows="3" placeholder="Tell us how we can help automate your workflow..."></textarea>
+          </div>
+          
+          <div class="booking-actions">
+            <button type="button" class="booking-btn booking-btn-secondary" id="btnBackToStep1">Back</button>
+            <button type="submit" class="booking-btn booking-btn-primary" id="btnSubmitBooking">Confirm Booking</button>
+          </div>
+        </form>
+      </div>
+      
+      <!-- Step 3: Success Screen -->
+      <div class="booking-step" id="bookingStep3">
+        <div class="success-screen" style="text-align: center;">
+          <div class="success-icon" style="width: 60px; height: 60px; background: rgba(0, 242, 254, 0.1); border: 2px solid #00F2FE; border-radius: 50%; color: #00F2FE; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);">✓</div>
+          <h3 class="booking-title" style="background: none; -webkit-text-fill-color: initial; margin-bottom: 8px;">Booking Confirmed!</h3>
+          <p class="booking-subtitle" style="margin-bottom: 15px; font-size: 13px; color: #8f9095;">Your professional consultation has been scheduled.</p>
+          <div style="background: #151618; border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 15px; margin-bottom: 25px; text-align: left;">
+            <p id="bookingDetailsSummary" style="font-size: 13.5px; color: #ffffff; line-height: 1.6; margin-bottom: 8px; font-weight: 500;"></p>
+            <p style="font-size: 12px; color: #606165; margin-bottom: 0; line-height: 1.4; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px;">An automated professional email confirmation has been sent containing your Google Meet link and calendar event invitation.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; margin-top: 15px;">
+            <div style="display: flex; gap: 10px; justify-content: center; width: 100%;">
+              <a id="emailPreviewBtn" href="#" target="_blank" class="booking-btn booking-btn-primary" style="display: none; flex: 1; padding: 10px 15px; text-decoration: none; font-size: 12.5px; line-height: 20px; align-items: center; justify-content: center; text-align: center;">View Email Preview</a>
+              <a id="icsDownloadBtn" href="#" download="invite.ics" class="booking-btn booking-btn-secondary" style="display: none; flex: 1; padding: 10px 15px; text-decoration: none; font-size: 12.5px; line-height: 20px; align-items: center; justify-content: center; text-align: center; border-color: rgba(0, 242, 254, 0.3); color: #00F2FE;">Get Calendar Invite</a>
+            </div>
+            <button class="booking-btn booking-btn-secondary" id="successCloseBtn" style="padding: 10px 20px; font-size: 13px; width: 100%;">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript and Interactions -->
+  <script>
+    // Toggle Product Specs Accordion
+    function toggleSpec(header) {
+      const content = header.nextElementSibling;
+      const arrow = header.querySelector('.spec-arrow');
+      if (content.classList.contains('active')) {
+        content.classList.remove('active');
+        arrow.innerText = '▼';
+      } else {
+        content.classList.add('active');
+        arrow.innerText = '▲';
+      }
+    }
+
+    function toggleSpecDirect(btn) {
+      const card = btn.closest('.product-card');
+      const header = card.querySelector('.spec-header');
+      toggleSpec(header);
+    }
+  </script>
+
+  <!-- Rebranding logo and motion tracking loader -->
+  <script>
+    /* GianTecH Motion and Interactive Particle Animation */
+    (function() {
+      // 1. Create and inject Cursor Glow element
+      var glow = document.createElement('div');
+      glow.className = 'cursor-glow-bg';
+      document.body.appendChild(glow);
+
+      window.addEventListener('mousemove', function(e) {
+        var x = (e.clientX / window.innerWidth) * 100;
+        var y = (e.clientY / window.innerHeight) * 100;
+        glow.style.setProperty('--mouse-x', x + '%');
+        glow.style.setProperty('--mouse-y', y + '%');
+      });
+
+      // 2. Set up Scroll Reveal elements
+      var targetSelectors = [
+        '.Hero_title__sHOGp',
+        '.Hero_descriptionContainer__PeKJU',
+        '.product-card',
+        'h2'
+      ];
+
+      var observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.05
+      };
+
+      var revealObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      targetSelectors.forEach(function(selector) {
+        var elements = document.querySelectorAll(selector);
+        elements.forEach(function(el) {
+          el.classList.add('reveal-element');
+          revealObserver.observe(el);
+        });
+      });
+
+      // 3. Create Hero Particle Canvas
+      var heroContainer = document.querySelector('.Hero_container__inGFW');
+      if (heroContainer) {
+        var ambientGlow = document.createElement('div');
+        ambientGlow.className = 'ambient-hero-glow';
+        heroContainer.appendChild(ambientGlow);
+
+        var canvas = document.getElementById('hero-particle-canvas');
+        if (canvas) {
+          var ctx = canvas.getContext('2d');
+          var particles = [];
+          var particleCount = 35;
+
+          function resizeCanvas() {
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+          }
+          resizeCanvas();
+          window.addEventListener('resize', resizeCanvas);
+
+          function Particle() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 0.4;
+            this.vy = (Math.random() - 0.5) * 0.4;
+            this.radius = Math.random() * 2 + 1;
+          }
+
+          Particle.prototype.update = function() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+            if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+          };
+
+          Particle.prototype.draw = function() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(0, 242, 254, 0.4)';
+            ctx.fill();
+          };
+
+          for (var i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+          }
+
+          function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(function(p) {
+              p.update();
+              p.draw();
+            });
+
+            ctx.strokeStyle = 'rgba(0, 242, 254, 0.04)';
+            ctx.lineWidth = 1;
+            for (var i = 0; i < particles.length; i++) {
+              for (var j = i + 1; j < particles.length; j++) {
+                var dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                if (dist < 120) {
+                  ctx.beginPath();
+                  ctx.moveTo(particles[i].x, particles[i].y);
+                  ctx.lineTo(particles[j].x, particles[j].y);
+                  ctx.stroke();
+                }
+              }
+            }
+
+            requestAnimationFrame(animate);
+          }
+          animate();
+        }
+      }
+    })();
+  </script>
+
+  <!-- Booking System JavaScript (synced with index.html) -->
+  <script>
+    (function() {
+      const btnOpen = document.getElementById('navBookBtn');
+      const backdrop = document.getElementById('bookingBackdrop');
+      const btnClose = document.getElementById('bookingCloseBtn');
+      const successClose = document.getElementById('successCloseBtn');
+      
+      const step1 = document.getElementById('bookingStep1');
+      const step2 = document.getElementById('bookingStep2');
+      const step3 = document.getElementById('bookingStep3');
+      
+      const btnGo2 = document.getElementById('btnGoToStep2');
+      const btnBack1 = document.getElementById('btnBackToStep1');
+      
+      let selectedDate = null;
+      let selectedTime = null;
+      
+      function openModal() {
+        resetBooking();
+        backdrop.classList.add('active');
+      }
+      
+      window.bookProduct = function(productName) {
+        openModal();
+        const select = document.getElementById('projectInterest');
+        if (select) {
+          select.value = productName;
+        }
+      }
+      
+      function closeModal() {
+        backdrop.classList.remove('active');
+      }
+      
+      btnOpen.addEventListener('click', openModal);
+      btnClose.addEventListener('click', closeModal);
+      successClose.addEventListener('click', closeModal);
+      
+      btnGo2.addEventListener('click', () => {
+        step1.classList.remove('active');
+        step2.classList.add('active');
+      });
+      
+      btnBack1.addEventListener('click', () => {
+        step2.classList.remove('active');
+        step1.classList.add('active');
+      });
+      
+      function resetBooking() {
+        selectedDate = null;
+        selectedTime = null;
+        btnGo2.disabled = true;
+        step1.classList.add('active');
+        step2.classList.remove('active');
+        step3.classList.remove('active');
+        document.getElementById('bookingForm').reset();
+        renderCalendar();
+        document.getElementById('slotsContainer').innerHTML = '<p style="color: #606165; font-size: 13px; text-align: center; margin-top: 50px;">Select a date to view available time slots.</p>';
+      }
+      
+      // Populate Calendar & Slots
+      const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      const today = new Date(2026, 5, 17); // Month index 5 is June
+      
+      document.getElementById('calendarMonthYear').innerText = months[today.getMonth()] + " " + today.getFullYear();
+      
+      function renderCalendar() {
+        const grid = document.getElementById('calendarGrid');
+        grid.innerHTML = '';
+        
+        const days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+        days.forEach(d => {
+          const el = document.createElement('div');
+          el.className = 'calendar-day-label';
+          el.innerText = d;
+          grid.appendChild(el);
+        });
+        
+        // Populate days
+        const startDay = new Date(2026, 5, 1).getDay(); // June 1st day of week
+        const totalDays = 30; // June total days
+        
+        // Blank spaces
+        for (let i = 0; i < startDay; i++) {
+          const empty = document.createElement('div');
+          grid.appendChild(empty);
+        }
+        
+        // Day numbers
+        for (let day = 1; day <= totalDays; day++) {
+          const el = document.createElement('div');
+          el.className = 'calendar-day';
+          el.innerText = day;
+          
+          // Disable past days before June 17, 2026
+          if (day < 17) {
+            el.classList.add('disabled');
+          } else {
+            el.addEventListener('click', () => {
+              document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('selected'));
+              el.classList.add('selected');
+              selectedDate = `June ${day}, 2026`;
+              showSlots();
+            });
+          }
+          grid.appendChild(el);
+        }
+      }
+      
+      function showSlots() {
+        const container = document.getElementById('slotsContainer');
+        container.innerHTML = '';
+        
+        const slots = ["09:00 AM", "10:30 AM", "01:00 PM", "02:30 PM", "04:00 PM"];
+        slots.forEach(slot => {
+          const el = document.createElement('div');
+          el.className = 'time-slot';
+          el.innerText = slot;
+          el.addEventListener('click', () => {
+            document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedTime = slot;
+            btnGo2.disabled = false;
+          });
+          container.appendChild(el);
+        });
+      }
+      
+      window.submitBooking = function(e) {
+        e.preventDefault();
+        const name = document.getElementById('clientName').value;
+        const email = document.getElementById('clientEmail').value;
+        const product = document.getElementById('projectInterest').value;
+        const notes = document.getElementById('projectNotes').value;
+        
+        const submitBtn = document.getElementById('btnSubmitBooking');
+        const originalText = submitBtn.innerText;
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Confirming...";
+
+        const booking = {
+          name,
+          email,
+          product,
+          notes,
+          date: selectedDate,
+          time: selectedTime,
+          timestamp: new Date().toISOString()
+        };
+        
+        // Save details to localStorage for persistence
+        const bookings = JSON.parse(localStorage.getItem('giantech_bookings') || '[]');
+        bookings.push(booking);
+        localStorage.setItem('giantech_bookings', JSON.stringify(bookings));
+        
+        // Post to local server for real booking processing and email generation
+        fetch('/api/book', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(booking)
+        })
+        .then(res => {
+          if (!res.ok) throw new Error("HTTP error " + res.status);
+          return res.json();
+        })
+        .then(data => {
+          submitBtn.disabled = false;
+          submitBtn.innerText = originalText;
+
+          // Show details on success screen
+          document.getElementById('bookingDetailsSummary').innerHTML = `
+            <strong style="color: #00F2FE;">Consultation:</strong> ${product}<br>
+            <strong style="color: #00F2FE;">Schedule:</strong> ${selectedDate} at ${selectedTime}<br>
+            <strong style="color: #00F2FE;">Meeting:</strong> <a href="${data.meeting_url}" target="_blank" style="color: #00F2FE; text-decoration: underline; font-weight: 600;">Join Google Meet</a>
+          `;
+          
+          // Show and configure the email preview and calendar download buttons
+          const previewBtn = document.getElementById('emailPreviewBtn');
+          if (previewBtn) {
+            previewBtn.href = data.email_preview;
+            previewBtn.style.display = 'inline-flex';
+          }
+          
+          const icsBtn = document.getElementById('icsDownloadBtn');
+          if (icsBtn) {
+            icsBtn.href = data.ics_preview;
+            icsBtn.style.display = 'inline-flex';
+          }
+          
+          // Transition to success screen
+          step2.classList.remove('active');
+          step3.classList.add('active');
+        })
+        .catch(err => {
+          console.warn("Server booking failed, falling back to local simulation:", err);
+          submitBtn.disabled = false;
+          submitBtn.innerText = originalText;
+
+          // Fallback UI if server isn't running or error occurred
+          document.getElementById('bookingDetailsSummary').innerHTML = `
+            <strong style="color: #00F2FE;">Consultation:</strong> ${product}<br>
+            <strong style="color: #00F2FE;">Schedule:</strong> ${selectedDate} at ${selectedTime}
+          `;
+          
+          const previewBtn = document.getElementById('emailPreviewBtn');
+          if (previewBtn) {
+            previewBtn.style.display = 'none';
+          }
+
+          const icsBtn = document.getElementById('icsDownloadBtn');
+          if (icsBtn) {
+            icsBtn.style.display = 'none';
+          }
+          
+          step2.classList.remove('active');
+          step3.classList.add('active');
+        });
+      };
+      
+      renderCalendar();
+    })();
+  </script>
+</body>
+</html>

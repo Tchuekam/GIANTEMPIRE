@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//GianTecH Empire//Consultation Scheduler//EN
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+UID:booking_989890@giantech.app
+DTSTAMP:20260622T063739Z
+DTSTART:20260630T160000Z
+DTEND:20260630T164500Z
+SUMMARY:GianTecH Consultation: Mbowazap
+DESCRIPTION:Hello rostand ,\n\nYour technical consultation with GianTecH Empire is confirmed.\n\nMeeting Link: https://meet.google.com/gt-consult-rostand-\n\nClient Notes: hi
+LOCATION:https://meet.google.com/gt-consult-rostand-
+ORGANIZER;CN="GianTecH Empire Team":mailto:support@giantech.app
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="rostand ":mailto:tchuekrostand@gmail.com
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR

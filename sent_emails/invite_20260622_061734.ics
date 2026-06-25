@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//GianTecH Empire//Consultation Scheduler//EN
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+UID:booking_458913@giantech.app
+DTSTAMP:20260622T061734Z
+DTSTART:20260625T110000Z
+DTEND:20260625T114500Z
+SUMMARY:GianTecH Consultation: DivineLink
+DESCRIPTION:Hello Client User,\n\nYour technical consultation with GianTecH Empire is confirmed.\n\nMeeting Link: https://meet.google.com/gt-consult-client-u\n\nClient Notes: Integration task.
+LOCATION:https://meet.google.com/gt-consult-client-u
+ORGANIZER;CN="GianTecH Empire Team":mailto:support@giantech.app
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Client User":mailto:client@example.com
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR
