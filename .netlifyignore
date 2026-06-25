@@ -1,0 +1,12 @@
+.git/
+.netlify/
+
+# Local scraping, inspection, and patch helper files are not part of the static site.
+*.py
+*.txt
+*.download
+sent_emails/
+
+# Saved CDN query responses have URL-query-style filenames that Netlify cannot deploy.
+f=auto*
+giantech_files/f=auto*

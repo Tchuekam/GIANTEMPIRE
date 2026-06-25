@@ -11,41 +11,41 @@ website_dir = os.path.join(workspace_dir, "Assets", "website")
 
 # Mappings for Graphics images
 graphics_meta = {
-    "#graphicdesign #campaigndesign #modelling #beauty….jpg": ("Fashion Campaign Modeling", "Creative Direction"),
-    "#hair #newmonth #hair.jpg": ("Hair Brand Promotion", "Visual Campaign"),
+    "graphicdesign-campaigndesign-modelling-beauty.jpg": ("Fashion Campaign Modeling", "Creative Direction"),
+    "hair-newmonth-hair.jpg": ("Hair Brand Promotion", "Visual Campaign"),
     "1100145015237961922.jpg": ("Cosmetics Branding", "Identity Design"),
     "1105774514778007991.jpg": ("Luxury Perfume Advertisement", "Product Design"),
     "1111192908080178768.jpg": ("Modern Footwear Launch", "Product Styling"),
     "1139621880737258007.jpg": ("Beverage Label Identity", "Packaging Design"),
-    "A beautiful product deserves a presentation that….jpg": ("Minimalist Product Showcase", "Creative Direction"),
-    "A fictional magazine cover for a new street wear.jpg": ("Streetwear Magazine Cover", "Editorial Design"),
-    "Clean but impressive design👌.jpg": ("Premium Cosmetics Ad", "Visual Identity"),
-    "Experience the refreshing essence of nature with….jpg": ("Natural Fragrance Campaign", "Creative Advertising"),
-    "Flyer Design.jpg": ("Corporate Event Identity", "Marketing Flyer"),
-    "How to create clean and simple perfume flyer….jpg": ("Aromatherapy Product Launch", "Branding"),
-    "Shoes are never just shoes__They’re style….jpg": ("Premium Sneakers Concept", "Ad Design"),
-    "When it comes to professionalism, let's handle….jpg": ("Creative Brand Consultation", "Brand Identity"),
-    "Will you be my client_ 😅🌹  Relax kwanza… si….jpg": ("Corporate Visual Assets", "Creative Agency Design")
+    "beautiful-product-presentation.jpg": ("Minimalist Product Showcase", "Creative Direction"),
+    "fictional-streetwear-magazine-cover.jpg": ("Streetwear Magazine Cover", "Editorial Design"),
+    "clean-impressive-design.jpg": ("Premium Cosmetics Ad", "Visual Identity"),
+    "refreshing-nature-essence.jpg": ("Natural Fragrance Campaign", "Creative Advertising"),
+    "flyer-design.jpg": ("Corporate Event Identity", "Marketing Flyer"),
+    "clean-simple-perfume-flyer.jpg": ("Aromatherapy Product Launch", "Branding"),
+    "shoes-style.jpg": ("Premium Sneakers Concept", "Ad Design"),
+    "professionalism-brand-consultation.jpg": ("Creative Brand Consultation", "Brand Identity"),
+    "client-relax-kwanza.jpg": ("Corporate Visual Assets", "Creative Agency Design")
 }
 
 # Mappings for Website assets
 website_meta = {
-    "#Stuffsus #ui #ux #shop #shopui….jpg": ("E-Commerce Storefront", "UI/UX Development", "ecommerce-shop"),
+    "stuffsus-ui-ux-shop-shopui.jpg": ("E-Commerce Storefront", "UI/UX Development", "ecommerce-shop"),
     "248049891973194616.jpg": ("SaaS Dashboard Interface", "Web Application", "saas-app"),
     "338755203245078169.jpg": ("AI Analytical Platform", "SaaS Platform", "ai-analytics"),
     "751538256612359570.jpg": ("Dark UI Design System", "Web Application", "design-system"),
     "829929037627709661.jpg": ("Fintech Operations Board", "Dashboard Interface", "fintech-ops"),
-    "A modern website concept for premium property….jpg": ("Premium Real Estate Portal", "Web Experience", "real-estate"),
-    "Alim Joldaspayev (@alimdesigner_) on X.jpg": ("Sleek Portfolios Grid", "Creative Frontend", "portfolio-grid"),
-    "Hello Insta✨🔥_Social media fliers for….jpg": ("Marketing Analytics Hub", "SaaS Platform", "marketing-hub"),
-    "Looking for the best dropshipping products to sell….jpg": ("Dropshipping Merchant Dashboard", "Web Application", "dropshipping"),
-    "Powerful Workflow Automation Software & Tools….jpg": ("GianTecH Automation Engine", "Product Platform", "automation-engine"),
-    "Ready to build the future_  Start your AI company….jpg": ("AI Incubator Dashboard", "Frontend Web App", "ai-incubator"),
-    "Royella – Resort and Hotel Booking HTML5 Template….jpg": ("Resort & Hotel Booking Portal", "Responsive Website", "hotel-booking"),
-    "Social Media flyer design for Teegar's Gadget.jpg": ("Teegar Gadget Marketplace", "E-Commerce Frontend", "teegar-gadget"),
-    "Somos un estudio de diseño gráfico en San Luis….jpg": ("Creative Design Studio Portal", "Visual Website", "design-studio"),
-    "Top Direct Selling Software Provider.jpg": ("Enterprise ERP Software Portal", "Enterprise Application", "erp-portal"),
-    "Web Design, Adobe Photoshop, Adobe Illustrator.jpg": ("Graphic Agency Agency Portal", "Branding Website", "graphics-agency"),
+    "premium-property-website-concept.jpg": ("Premium Real Estate Portal", "Web Experience", "real-estate"),
+    "alim-joldaspayev-portfolio-grid.jpg": ("Sleek Portfolios Grid", "Creative Frontend", "portfolio-grid"),
+    "social-media-fliers-marketing-hub.jpg": ("Marketing Analytics Hub", "SaaS Platform", "marketing-hub"),
+    "dropshipping-products-dashboard.jpg": ("Dropshipping Merchant Dashboard", "Web Application", "dropshipping"),
+    "workflow-automation-tools.jpg": ("GianTecH Automation Engine", "Product Platform", "automation-engine"),
+    "ai-company-incubator-dashboard.jpg": ("AI Incubator Dashboard", "Frontend Web App", "ai-incubator"),
+    "royella-resort-hotel-booking-template.jpg": ("Resort & Hotel Booking Portal", "Responsive Website", "hotel-booking"),
+    "teegar-gadget-marketplace.jpg": ("Teegar Gadget Marketplace", "E-Commerce Frontend", "teegar-gadget"),
+    "graphic-design-studio-san-luis.jpg": ("Creative Design Studio Portal", "Visual Website", "design-studio"),
+    "direct-selling-software-provider.jpg": ("Enterprise ERP Software Portal", "Enterprise Application", "erp-portal"),
+    "web-design-adobe-portfolio.jpg": ("Graphic Agency Agency Portal", "Branding Website", "graphics-agency"),
     "d20b5e2532a2b11f4c0d3c56e6f22c5b_360w.mp4": ("Dynamic Workflow Interactions", "Interactive Web Experience", "workflow-automation")
 }
 
