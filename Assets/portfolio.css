@@ -435,3 +435,93 @@
   box-shadow: 0 12px 30px rgba(255, 0, 170, 0.08) !important;
 }
 
+
+/* ==========================================================================
+   Mobile & Tablet Responsive Fallbacks
+   ========================================================================== */
+@media (max-width: 1023px) {
+  /* Remove 480vh pin spacing */
+  .portfolio-scroll-wrapper {
+    height: auto !important;
+    padding: 60px 0;
+  }
+  
+  /* Remove sticky behavior, allow native horizontal scroll */
+  .portfolio-sticky-container {
+    position: relative;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  
+  .portfolio-sticky-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .portfolio-horizontal-track {
+    height: auto;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  
+  /* Make all panels snap targets */
+  .portfolio-intro-panel,
+  .portfolio-card-panel,
+  .stack-card {
+    scroll-snap-align: center;
+  }
+  
+  /* Adjust widths for mobile */
+  .portfolio-intro-panel {
+    width: 85vw;
+    min-width: unset;
+    margin-right: 5vw;
+    margin-bottom: 20px;
+  }
+  
+  .portfolio-card {
+    width: 85vw;
+    min-width: unset;
+    aspect-ratio: 4 / 3;
+  }
+  
+  .portfolio-card-panel {
+    margin-right: 5vw;
+  }
+  
+  /* Convert the stack panel to normal flex row for mobile */
+  .portfolio-stack-panel {
+    width: auto;
+    height: auto;
+    display: flex;
+    padding-right: 5vw;
+  }
+  
+  /* Convert absolute stacked cards to relative row */
+  .portfolio-stack-container {
+    display: flex;
+    width: auto;
+    height: auto;
+    aspect-ratio: auto;
+    gap: 5vw;
+    min-width: unset;
+  }
+  
+  .portfolio-stack-container .stack-card {
+    position: relative;
+    width: 85vw;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    flex-shrink: 0;
+    box-shadow: none !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+  }
+  
+  .portfolio-title-reveal span {
+    opacity: 1;
+    transform: none;
+  }
+}
