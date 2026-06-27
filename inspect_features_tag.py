@@ -1,4 +1,4 @@
-path = r"c:\Users\CLINIC\.gemini\antigravity-ide\scratch\Linear – The system for product development_files\index.html"
+path = r"c:\Users\CLINIC\.gemini\antigravity-ide\scratch\giantech_files\index.html"
 with open(path, "r", encoding="utf-8") as f:
     content = f.read()
 

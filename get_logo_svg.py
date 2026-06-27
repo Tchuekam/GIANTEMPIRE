@@ -1,6 +1,6 @@
 import re
 
-html_path = r"c:\Users\CLINIC\.gemini\antigravity-ide\scratch\Linear – The system for product development.html"
+html_path = r"c:\Users\CLINIC\.gemini\antigravity-ide\scratch\linear-the-system-for-product-development.html"
 
 with open(html_path, "r", encoding="utf-8") as f:
     content = f.read()

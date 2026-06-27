@@ -1,6 +1,6 @@
 import re
 
-path = r"c:\Users\CLINIC\.gemini\antigravity-ide\scratch\Linear – The system for product development_files\layout-36ce25f36e86ec77.js.download"
+path = r"c:\Users\CLINIC\.gemini\antigravity-ide\scratch\giantech_files\layout-36ce25f36e86ec77.js.download"
 with open(path, "r", encoding="utf-8") as f:
     content = f.read()
 

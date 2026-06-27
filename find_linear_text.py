@@ -7,7 +7,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 # The key is to find where the brand icon SVG is defined
 # Linear's logo is a rounded square with horizontal lines (the "Linear" mark)
 
-files_dir = r"c:\Users\CLINIC\.gemini\antigravity-ide\scratch\Linear – The system for product development_files"
+files_dir = r"c:\Users\CLINIC\.gemini\antigravity-ide\scratch\giantech_files"
 
 # Search for the specific SVG path data that makes up the Linear logo
 # The Linear logo is like a rounded square with 5 horizontal lines

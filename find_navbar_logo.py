@@ -2,7 +2,7 @@ import re, os, sys
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-files_dir = r"c:\Users\CLINIC\.gemini\antigravity-ide\scratch\Linear – The system for product development_files"
+files_dir = r"c:\Users\CLINIC\.gemini\antigravity-ide\scratch\giantech_files"
 for fname in sorted(os.listdir(files_dir)):
     if not fname.endswith('.js.download'):
         continue

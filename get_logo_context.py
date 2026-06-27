@@ -1,7 +1,7 @@
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
 
-path = r"c:\Users\CLINIC\.gemini\antigravity-ide\scratch\Linear – The system for product development_files\22961-b5e844867516afbb.js.download"
+path = r"c:\Users\CLINIC\.gemini\antigravity-ide\scratch\giantech_files\22961-b5e844867516afbb.js.download"
 with open(path, "r", encoding="utf-8") as f:
     content = f.read()
 
