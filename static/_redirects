@@ -1,0 +1,3 @@
+/api/download/*  https://tchuekam-backend-production.up.railway.app/api/download/:splat  302!
+/downloads/*     https://tchuekam-backend-production.up.railway.app/api/download/:splat  302!
+/api/*           https://tchuekam-backend-production.up.railway.app/api/:splat           200!
