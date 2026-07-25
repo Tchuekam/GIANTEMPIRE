@@ -3,7 +3,7 @@
 
 import React, {useEffect, useState} from 'react';
 
-const DOWNLOAD_BASE_URL = 'https://tchuekam-backend-production.up.railway.app/api/download';
+const DOWNLOAD_BASE_URL = '/downloads';
 
 const DIRECT_DOWNLOADS = {
   'windows': {
