@@ -1,31 +1,29 @@
 // Self-hosted direct download component for TchueKAM Agent.
-// Single source of truth: Direct self-hosted release API endpoints.
+// Single source of truth: Direct root static installer endpoints.
 
 import React, {useEffect, useState} from 'react';
 
-const DOWNLOAD_BASE_URL = '/downloads';
-
 const DIRECT_DOWNLOADS = {
   'windows': {
-    url: `${DOWNLOAD_BASE_URL}/windows`,
+    url: '/TchueKAM-Setup.exe',
     filename: 'TchueKAM-Setup.exe',
     label: 'Windows (64-bit)',
     type: '.exe installer',
   },
   'macos-arm64': {
-    url: `${DOWNLOAD_BASE_URL}/mac-arm64`,
+    url: '/TchueKAM-Mac-arm64.dmg',
     filename: 'TchueKAM-Mac-arm64.dmg',
     label: 'macOS (Apple Silicon)',
     type: '.dmg',
   },
   'macos-x64': {
-    url: `${DOWNLOAD_BASE_URL}/mac-x64`,
+    url: '/TchueKAM-Mac-x64.dmg',
     filename: 'TchueKAM-Mac-x64.dmg',
     label: 'macOS (Intel)',
     type: '.dmg',
   },
   'linux': {
-    url: `${DOWNLOAD_BASE_URL}/linux`,
+    url: '/TchueKAM-Linux.AppImage',
     filename: 'TchueKAM-Linux.AppImage',
     label: 'Linux',
     type: '.AppImage',
