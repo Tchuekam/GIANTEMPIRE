@@ -181,11 +181,12 @@ const config = {
         {name: 'description', content: 'Official documentation for TchueKAM Agent — install, configure, and master your native desktop AI assistant.'},
       ],
       navbar: {
-        title: 'TchueKAM',
+        title: '',
         logo: {
-          alt: 'TchueKAM',
-          src: 'img/logo.svg',
-          srcDark: 'img/logo.svg',
+          alt: 'TchueKAM SEEDANCE 2.0 4K',
+          src: 'img/logo_seedance_badge.png',
+          srcDark: 'img/logo_seedance_badge.png',
+          height: 32,
         },
         items: [
           {to: 'pathname:///explore/index.html', label: '🎬 AI Studio', position: 'left', target: '_self'},
