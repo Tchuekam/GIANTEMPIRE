@@ -1,0 +1,66 @@
+---
+id: installation
+title: Installation
+sidebar_position: 3
+---
+
+import LatestRelease from '@site/src/components/LatestRelease';
+
+# Installation
+
+## Latest version
+
+<LatestRelease showAllPlatforms={true} />
+
+## System requirements
+
+| OS | Minimum | Recommended |
+|---|---|---|
+| **Windows** | Windows 10 (64-bit) | Windows 11 |
+| **macOS**   | macOS 11 Big Sur (Intel) / macOS 12 Monterey (Apple Silicon) | macOS 14 Sonoma+ |
+| **Linux**   | Ubuntu 20.04 / Fedora 36 / equivalent glibc 2.31+ | Any current distro |
+| **RAM**     | 4 GB | 8 GB+ |
+| **Disk**    | 500 MB free | 1 GB free |
+| **Network** | Internet for initial setup and updates | Always-on for cloud features |
+
+## Verify your download
+
+After downloading, you can verify the file matches the published checksum on the [latest release page](https://github.com/Tchuekam/tchuekam-desktop/releases/latest).
+
+**Windows (PowerShell):**
+```powershell
+Get-FileHash -Algorithm SHA256 TchuekaM-Setup-win-x64.exe
+```
+
+**macOS / Linux:**
+```bash
+shasum -a 256 TchuekaM-Setup-*.dmg
+```
+
+## Silent / unattended install
+
+### Windows
+```powershell
+TchuekaM-Setup-win-x64.exe /S /D=C:\Apps\TchueKAM
+```
+
+- `/S` runs silently (no UI)
+- `/D=` sets the install directory (must be last argument, no quotes)
+
+### Linux
+The AppImage is already portable — just download and run. No install step required.
+
+## Uninstall
+
+- **Windows:** Settings → Apps → TchueKAM → Uninstall
+- **macOS:** Drag **TchueKAM** from Applications to Trash
+- **Linux:** Delete the AppImage file
+
+User data lives in:
+- **Windows:** `%AppData%\TchueKAM`
+- **macOS:** `~/Library/Application Support/TchueKAM`
+- **Linux:** `~/.config/TchueKAM`
+
+Remove that folder to clear all settings and history.
+
+## Next: [Getting Started](getting-started)

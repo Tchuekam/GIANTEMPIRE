@@ -1,0 +1,63 @@
+/* TchueKAM brand colors — accent #00F2FE (matches tchuekam.com) */
+:root {
+  --ifm-color-primary: #00b4c4;
+  --ifm-color-primary-dark: #009eac;
+  --ifm-color-primary-darker: #008e9a;
+  --ifm-color-primary-darkest: #007780;
+  --ifm-color-primary-light: #00d0e0;
+  --ifm-color-primary-lighter: #00e0f0;
+  --ifm-color-primary-lightest: #2af2ff;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.06);
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #00F2FE;
+  --ifm-color-primary-dark: #00d8e3;
+  --ifm-color-primary-darker: #00c6d0;
+  --ifm-color-primary-darkest: #00a4ad;
+  --ifm-color-primary-light: #2af4ff;
+  --ifm-color-primary-lighter: #4af6ff;
+  --ifm-color-primary-lightest: #80f9ff;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 242, 254, 0.08);
+  --ifm-background-color: #08090a;
+  --ifm-background-surface-color: #0f1011;
+  --ifm-navbar-background-color: rgba(8, 9, 10, 0.85);
+  --ifm-footer-background-color: #0a0b0c;
+}
+
+/* Hero gradient buttons */
+.button--primary {
+  background: linear-gradient(135deg, #00F2FE 0%, #4FACFE 100%);
+  border: none;
+  color: #000;
+  font-weight: 600;
+}
+.button--primary:hover {
+  background: linear-gradient(135deg, #2af4ff 0%, #5fb5ff 100%);
+  color: #000;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 242, 254, 0.35);
+}
+
+/* Subtle glow on navbar download CTA */
+.navbar__item.button {
+  margin-left: 8px;
+}
+
+/* Smooth code block borders */
+.theme-code-block {
+  border-radius: 8px;
+}
+
+/* Card-style category index pages */
+article {
+  line-height: 1.7;
+}
+
+/* Footer polish */
+.footer--dark {
+  --ifm-footer-background-color: #08090a;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}

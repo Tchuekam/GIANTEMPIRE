@@ -1,0 +1,55 @@
+---
+id: updates
+title: Updates
+sidebar_position: 7
+---
+
+import LatestRelease from '@site/src/components/LatestRelease';
+
+# Updates
+
+TchueKAM keeps itself up to date automatically. No manual reinstalls.
+
+## How it works
+
+1. TchueKAM checks for new releases on startup (after a 30-second delay) and every 4 hours while running.
+2. When a new release is found, it downloads in the background — no interruption.
+3. Once the download finishes, you'll see a notification: **"Update ready — restart now or later"**.
+4. Clicking **Restart now** applies the update in a few seconds.
+5. Clicking **Later** queues the update for the next time you close TchueKAM.
+
+## Current latest version
+
+<LatestRelease />
+
+## Manual update check
+
+If you want to check immediately:
+- **Settings → Updates → Check now**
+
+## Update channel
+
+By default, TchueKAM follows the **stable** channel — only fully tested releases.
+
+If you want early access to upcoming features, switch to **beta** in **Settings → Updates → Channel**. Beta releases are rolled out 1–2 weeks before stable.
+
+## Skipping a version
+
+If a release introduces a problem for you, **Settings → Updates → Pause updates** lets you skip new versions until you re-enable. Use sparingly — security fixes ship in regular releases.
+
+## Update history
+
+Every applied update is logged in **Settings → Updates → History** with version, date, and whether it succeeded.
+
+## What if an update fails?
+
+If an update fails to download or install:
+1. TchueKAM falls back to the previous version automatically
+2. The failure is logged in **Settings → Updates → History**
+3. The next periodic check will retry
+
+You can also manually download the [latest installer](installation) and run it on top of your existing install — your settings and data will be preserved.
+
+## Network and proxies
+
+Updates use HTTPS to GitHub Releases (`github.com`, `objects.githubusercontent.com`). If you're behind a corporate proxy, configure it in **Settings → Network → HTTP Proxy**.

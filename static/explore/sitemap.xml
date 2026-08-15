@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://tchuekam.com/</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    
+    <!-- Most Important Video: STOP SCROLLING -->
+    <video:video>
+      <video:thumbnail_loc>https://tchuekam.com/assets/cyber_yaounde_hero.jpg</video:thumbnail_loc>
+      <video:title>STOP SCROLLING. | Your Brand Could Look Like This</video:title>
+      <video:description>Flagship AI commercial showcase demonstrating high-conversion, cinematic camera movements and visual brand prestige by TchueKAM Studio.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/eVnhDqPzIeg</video:player_loc>
+      <video:duration>45</video:duration>
+      <video:publication_date>2026-03-10T12:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://tchuekam.com">TchueKAM Studio</video:uploader>
+    </video:video>
+
+    <!-- News Today: The AI Transformation Opportunity -->
+    <video:video>
+      <video:thumbnail_loc>https://tchuekam.com/assets/desert_convoy_cinema.jpg</video:thumbnail_loc>
+      <video:title>News Today — The AI Commercial Opportunity</video:title>
+      <video:description>An exploration into how AI video production is transforming commercial advertising and storytelling in Africa and worldwide.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/SqD3Aj3sGDw</video:player_loc>
+      <video:duration>90</video:duration>
+      <video:publication_date>2026-03-05T12:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://tchuekam.com">TchueKAM Studio</video:uploader>
+    </video:video>
+
+    <!-- The First AI Organoid from Cameroon -->
+    <video:video>
+      <video:thumbnail_loc>https://tchuekam.com/assets/vfx_liquid_glass.jpg</video:thumbnail_loc>
+      <video:title>First AI Organoid from Cameroon</video:title>
+      <video:description>Groundbreaking biological visualization exploring micro-cellular organoid structures with fluid neural shaders.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/DMhummHlP5I</video:player_loc>
+      <video:duration>75</video:duration>
+      <video:publication_date>2026-02-20T10:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://tchuekam.com">TchueKAM Studio</video:uploader>
+    </video:video>
+
+    <!-- Manuella Korian in the Skin of a Cameroonian -->
+    <video:video>
+      <video:thumbnail_loc>https://tchuekam.com/assets/avatar_cyber_model.jpg</video:thumbnail_loc>
+      <video:title>Manuella Korian in the Skin of a Cameroonian</video:title>
+      <video:description>Photorealistic cultural avatar study celebrating Cameroonian heritage with natural emotive facial nuance.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/Oqk95fbA_7Y</video:player_loc>
+      <video:duration>50</video:duration>
+      <video:publication_date>2026-03-08T14:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://tchuekam.com">TchueKAM Studio</video:uploader>
+    </video:video>
+  </url>
+</urlset>

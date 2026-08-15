@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 240" fill="none" role="img" aria-label="TchueKAM">
+  <defs>
+    <linearGradient id="tkGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FB8A3C"/>
+      <stop offset="0.52" stop-color="#D0219E"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left bracket [ -->
+  <g fill="url(#tkGrad)">
+    <rect x="84"  y="58"  width="36" height="124" rx="14"/>
+    <rect x="84"  y="58"  width="70" height="36"  rx="14"/>
+    <rect x="84"  y="146" width="70" height="36"  rx="14"/>
+  </g>
+
+  <!-- Right bracket ] -->
+  <g fill="url(#tkGrad)">
+    <rect x="392" y="58"  width="36" height="124" rx="14"/>
+    <rect x="358" y="58"  width="70" height="36"  rx="14"/>
+    <rect x="358" y="146" width="70" height="36"  rx="14"/>
+  </g>
+
+  <!-- Connectors + nodes -->
+  <path d="M120 120 H212 M300 120 H392" stroke="url(#tkGrad)" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="166" cy="120" r="11" fill="url(#tkGrad)"/>
+  <circle cx="346" cy="120" r="11" fill="url(#tkGrad)"/>
+
+  <!-- Antenna -->
+  <path d="M256 96 V80 Q256 74 262 74 H272" stroke="url(#tkGrad)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Chat / agent core -->
+  <rect x="210" y="94" width="92" height="52" rx="13" fill="#ffffff" stroke="url(#tkGrad)" stroke-width="8"/>
+  <rect x="226" y="110" width="60" height="8" rx="4" fill="#F97316"/>
+  <rect x="226" y="126" width="38" height="8" rx="4" fill="#7C3AED"/>
+  <circle cx="278" cy="130" r="5" fill="#7C3AED"/>
+</svg>

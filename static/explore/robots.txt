@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Canonical XML Sitemap & Video Index
+Sitemap: https://tchuekam.com/sitemap.xml

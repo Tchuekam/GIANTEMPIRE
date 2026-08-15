@@ -1,0 +1,5 @@
+# Netlify Redirects for TchueKAM AI Studio Portfolio
+/explore/ /explore/index.html 200
+/explore /explore/index.html 200
+/portfolio /explore/index.html 301!
+/studio /explore/index.html 301!
