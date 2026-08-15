@@ -188,7 +188,7 @@ const config = {
           srcDark: 'img/logo.svg',
         },
         items: [
-          {to: '/explore', label: '🎬 AI Studio', position: 'left'},
+          {to: 'pathname:///explore/index.html', label: '🎬 AI Studio', position: 'left', target: '_self'},
           {to: '/getting-started', label: 'Getting Started', position: 'left'},
           {to: '/features', label: 'Features', position: 'left'},
           {to: '/changelog', label: 'Changelog', position: 'left'},
@@ -211,10 +211,10 @@ const config = {
           {
             title: 'AI Studio & Showcase',
             items: [
-              {label: 'AI Commercials & Films', to: '/explore'},
-              {label: 'Studio Capabilities', to: '/explore#services'},
-              {label: 'Transformation Engine', to: '/explore#transformation'},
-              {label: 'Commission a Project', to: '/explore#hire'},
+              {label: 'AI Commercials & Films', to: 'pathname:///explore/index.html', target: '_self'},
+              {label: 'Studio Capabilities', to: 'pathname:///explore/index.html#services', target: '_self'},
+              {label: 'Transformation Engine', to: 'pathname:///explore/index.html#transformation', target: '_self'},
+              {label: 'Commission a Project', to: 'pathname:///explore/index.html#hire', target: '_self'},
             ],
           },
           {
