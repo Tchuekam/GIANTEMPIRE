@@ -1,3 +1,11 @@
+# PersonaDNA Media Forensics & Autonomous Intelligence System
+/PersoNaDNA/*  https://tchuekam-personadna.netlify.app/:splat  200!
+/PersoNaDNA    https://tchuekam-personadna.netlify.app/  200!
+/personadna/*  https://tchuekam-personadna.netlify.app/:splat  200!
+/personadna    https://tchuekam-personadna.netlify.app/  200!
+/PERSONADNA/*  https://tchuekam-personadna.netlify.app/:splat  200!
+/PERSONADNA    https://tchuekam-personadna.netlify.app/  200!
+
 # Netlify Redirects for TchueKAM AI Studio Portfolio
 /explore/ /explore/index.html 200
 /explore /explore/index.html 200
