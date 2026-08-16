@@ -14,7 +14,7 @@ const sidebars = {
       type: 'category',
       label: 'Ecosystem & Founder',
       collapsed: false,
-      items: ['about-founder', 'magida'],
+      items: ['about-founder', 'magida', 'resources'],
     },
     {
       type: 'category',

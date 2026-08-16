@@ -234,6 +234,7 @@ const config = {
           {to: 'pathname:///explore/index.html', label: '🎬 AI Studio', position: 'left', target: '_self'},
           {to: '/getting-started', label: 'Getting Started', position: 'left'},
           {to: '/features', label: 'Features', position: 'left'},
+          {to: '/resources', label: 'Resources', position: 'left'},
           {to: '/changelog', label: 'Changelog', position: 'left'},
           {to: '/faq', label: 'FAQ', position: 'left'},
           {
@@ -258,6 +259,19 @@ const config = {
               {label: 'Studio Capabilities', to: 'pathname:///explore/index.html#services', target: '_self'},
               {label: 'Transformation Engine', to: 'pathname:///explore/index.html#transformation', target: '_self'},
               {label: 'Commission a Project', to: 'pathname:///explore/index.html#hire', target: '_self'},
+            ],
+          },
+          {
+            title: 'Founder & Investor Resources',
+            items: [
+              {
+                label: 'Investorlist.com – Curated Lists of Active Startup Investors, Angels, VCs, and Family Offices',
+                href: 'https://investorlist.com/',
+              },
+              {
+                label: 'Ecosystem & Founder Directory',
+                to: '/resources',
+              },
             ],
           },
           {
