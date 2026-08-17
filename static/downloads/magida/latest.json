@@ -2,10 +2,10 @@
   "versionName": "1.1.0",
   "versionCode": 10100,
   "url": "https://tchuekam.com/downloads/magida/MAGIDA-1.1.0.apk",
-  "size": "3.39 MB",
-  "bytes": 3556952,
-  "sha256": "044052de3c889a3e321ebf17468054bc8064a22d56e3284901a26a6b6f869f55",
+  "size": "3.40 MB",
+  "bytes": 3562077,
+  "sha256": "c8c26625cedfdd27a377456120b20f7e5fbf7a3c9e0b265e878bd802977a9580",
   "minAndroid": "5.1",
   "notes": "MAGIDA v1.1.0 — tactile UI, full intelligence copilot, offline-first sync, and forensic hardening.",
-  "releasedAt": "2026-08-17T12:13:06.971Z"
+  "releasedAt": "2026-08-17T12:49:25.463Z"
 }
