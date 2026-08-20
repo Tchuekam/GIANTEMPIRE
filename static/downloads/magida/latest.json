@@ -1,11 +1,10 @@
 {
-  "versionName": "1.1.0",
-  "versionCode": 10100,
-  "url": "https://tchuekam.com/downloads/magida/MAGIDA-1.1.0.apk",
-  "size": "3.40 MB",
-  "bytes": 3562077,
-  "sha256": "c8c26625cedfdd27a377456120b20f7e5fbf7a3c9e0b265e878bd802977a9580",
+  "versionName": "1.3.1",
+  "url": "https://tchuekam.com/downloads/magida/MAGIDA-1.3.1.apk",
+  "size": "3.41 MB",
+  "bytes": 3579169,
+  "sha256": "1a7b48ca3fc7862e6db9918f5333a0d352a6844a1d82d5dfd9c8080dc453f8a7",
   "minAndroid": "5.1",
-  "notes": "MAGIDA v1.1.0 — tactile UI, full intelligence copilot, offline-first sync, and forensic hardening.",
-  "releasedAt": "2026-08-17T12:49:25.463Z"
+  "notes": "MAGIDA v1.3.1 — critical fix: resolves the 'Cannot read properties of null (reading filter)' crash on fresh installs and hardens all views against null/offline data. Also fixes owner password sign-in after onboarding (no longer wrongly asks for a PIN).",
+  "releasedAt": "2026-08-20T00:56:11.259Z"
 }
