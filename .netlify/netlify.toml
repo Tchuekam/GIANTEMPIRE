@@ -1,13 +1,12 @@
 plugins = []
 headers = []
-redirects = []
 
 [functions]
 
 [functions."*"]
 
 [build]
-publish = "C:\\Users\\Rostand\\Documents\\GitHub\\tchuekam-docs\\build"
+publish = "C:\\Users\\Rostand\\Downloads\\GIANTEMPIRE\\build"
 publishOrigin = "ui"
 commandOrigin = "ui"
 command = "npm run build"
@@ -25,3 +24,123 @@ command = "npm run build"
 [build.processing.js]
 
 [build.services]
+
+[[redirects]]
+from = "/PersoNaDNA/*"
+to = "https://personadna.tchuekam.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/PersoNaDNA"
+to = "https://personadna.tchuekam.com/"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/personadna/*"
+to = "https://personadna.tchuekam.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/personadna"
+to = "https://personadna.tchuekam.com/"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/PERSONADNA/*"
+to = "https://personadna.tchuekam.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/PERSONADNA"
+to = "https://personadna.tchuekam.com/"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/explore/"
+to = "/explore/index.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/explore"
+to = "/explore/index.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/portfolio"
+to = "/explore/index.html"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/studio"
+to = "/explore/index.html"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
