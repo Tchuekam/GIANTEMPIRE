@@ -19,6 +19,8 @@ Designed to empower supermarkets, retail chains, and wholesale businesses across
 
 <MagidaDownload />
 
+**Current release: v1.3.2** — 22 August 2026. Installs over any earlier version without losing data; see the [changelog](#-version-history--changelog) for what changed.
+
 ### What ships in this release
 
 The shop-floor system: the till, the stock ledger and the reports.
@@ -81,6 +83,40 @@ over the existing app and keep all data.
 Magida is trusted by popular supermarkets, retail stores, wholesale distributors, and commercial enterprise chains to process thousands of daily transactions cleanly and securely.
 
 ---
+
+
+---
+
+## 📜 Version History & Changelog
+
+Every release of Magida introduces new capabilities, optimizations, and security updates:
+
+### 🔑 v1.3.2 (Released August 22, 2026)
+- **Emergency access repaired**: all **8** preset logins (1 Admin, 2 Managers, 5 Sellers) now sign in by **both password and PIN**, online or offline. The Admin entry had silently stopped working on any shop that completed setup — the owner's account took over `admin@store.com` and replaced its credentials.
+- **One-tap emergency sign-in**: the *Identifiants de secours* screen now signs you in directly, instead of only listing codes you had nowhere to type. Each account carries a **PIN** and a **Mot de passe** button.
+- **Reachable on a fresh install**: the emergency button no longer hides on devices that have never loaded a staff list — the exact devices most likely to need it.
+- **Cleaner lock screen**: preset accounts no longer appear as staff cards ahead of your real cashiers.
+- **Self-healing**: a preset that was deleted, deactivated or altered is restored on Hub start, without ever overwriting a real account that uses the same address.
+
+### 🛠️ v1.3.1 (Released August 20, 2026)
+- **Critical crash fix**: resolved the `Cannot read properties of null (reading 'filter')` crash on fresh installs, and hardened every view against null/offline data.
+- **Owner sign-in fix**: password-only owners are no longer wrongly asked for a PIN after onboarding.
+
+### 🚀 v1.3.0 (Released August 18, 2026)
+- **Pre-Configured Emergency Logins**: Seeded default accounts (**1 Admin**, **2 Managers**, and **5 Sellers**) out of the box so store staff never get locked out.
+- **Emergency Credentials Cheat Sheet**: Added an on-screen **"Identifiants de secours"** modal directly on the lock screen for 1-click password & PIN lookup.
+- **Zero-Friction Offline Auth**: Offline PBKDF2 hashing verifiers pre-cached for instant multi-cashier PIN logins during network disconnects.
+- **Setup Wizard Preset Fill**: 1-click preset account population in the store setup wizard.
+
+### ⚡ v1.2.0 (Released August 17, 2026)
+- **4-Step Setup Wizard**: First-run onboarding wizard creating store profile, admin, and cashiers in $< 60$ seconds.
+- **Local Network Discovery (Zero-IP)**: Automatic UDP beacon engine and subnet sweep on port 4001 for seamless till-to-hub connectivity.
+- **Cryptographic Device Pairing**: Live QR code & 6-digit handshake protocol for mobile POS pairing and instant revocation.
+
+### 🛡️ v1.1.0 (Released August 17, 2026)
+- **Offline-First Sync Engine**: Resilient Dexie (IndexedDB) local store with conflict-free sales queue.
+- **Intelligence Copilot**: Sales velocity forecasting, reorder suggestions, and automated stock ledger.
+- **Forensic Security Hardening**: Tamper-evident audit logs and role-based discount limits.
 
 ## 💡 About the Creator
 

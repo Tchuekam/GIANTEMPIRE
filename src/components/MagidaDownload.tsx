@@ -131,7 +131,26 @@ export default function MagidaDownload() {
           borderTop: `1px solid ${ACCENT}1A`,
         }}
       >
-        <Spec label="Package" value="com.tchuekam.magida" />
+        {manifest?.notes && (
+        <div
+          style={{
+            marginTop: 18,
+            padding: '12px 16px',
+            borderRadius: 10,
+            background: 'rgba(0, 242, 254, 0.08)',
+            border: '1px solid rgba(0, 242, 254, 0.25)',
+          }}
+        >
+          <div style={{fontSize: 11, letterSpacing: 0.6, textTransform: 'uppercase', color: '#00F2FE', fontWeight: 700, marginBottom: 4}}>
+            ✨ What's New in v{version || '1.3.0'}
+          </div>
+          <div style={{fontSize: 13, opacity: 0.9, lineHeight: 1.5}}>
+            {manifest.notes}
+          </div>
+        </div>
+      )}
+
+      <Spec label="Package" value="com.tchuekam.magida" />
         <Spec label="Requires" value={`Android ${manifest?.minAndroid || '5.1'}+`} />
         {manifest?.size && <Spec label="Size" value={manifest.size} />}
       </div>
