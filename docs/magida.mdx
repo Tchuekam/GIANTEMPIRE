@@ -19,7 +19,7 @@ Designed to empower supermarkets, retail chains, and wholesale businesses across
 
 <MagidaDownload />
 
-**Current release: v1.3.2** — 22 August 2026. Installs over any earlier version without losing data; see the [changelog](#-version-history--changelog) for what changed.
+**Current release: v1.4.0** — 25 August 2026. Installs over any earlier version without losing data; see the [changelog](#-version-history--changelog) for what changed.
 
 ### What ships in this release
 
@@ -90,6 +90,22 @@ Magida is trusted by popular supermarkets, retail stores, wholesale distributors
 ## 📜 Version History & Changelog
 
 Every release of Magida introduces new capabilities, optimizations, and security updates:
+
+### 🛰️ v1.5.0 (Released August 29, 2026)
+- **Fleet Telemetry & Observability**: Integrated real-time device and session telemetry with PostHog, authoritative identity context (install_id, device_id, session_id), and offline event queueing.
+- **Crash Recovery & True Session Duration**: Robust 30-second heartbeats prevent metric loss on abrupt OS process kills; orphaned unclosed sessions are automatically recovered on cold startup.
+- **Global Error & Performance Monitoring**: Uncaught JS errors, unhandled promise rejections, and React render errors are fingerprinted and deduplicated. Real-world performance monitors track slow API calls (>200ms) and sync cycles.
+- **Dynamic Remote Configuration & Feature Flags**: Safe 3-tier runtime configuration (memory -> localStorage -> defaults) with deterministic hash-based percentage rollouts and instant remote kill-switches.
+- **3-Tier OTA Update System**: Android web bundle hotfix updater enables JS/CSS fixes without rebuilding APKs, verified with SHA-256 cryptographic hashes.
+- **Anonymized Download Tracking**: High-performance download proxy with SHA-256 IP anonymization.
+
+### 🛡️ v1.4.0 (Released August 25, 2026)
+- **Route Ordering Isolation**: Explicit routes (`/products/categories/all` and `/customers/campaigns/list`) are declared ahead of generic parameter routes (`/:id`), eliminating 500 Postgres integer type conversion crashes.
+- **Offline Outbox Inventory Alignment**: `pushOutboxQueue()` accurately points to `/api/inventory/adjust` with resolved product IDs so offline stock adjustments sync cleanly without stalls.
+- **Sales Sync Foreign Key Resilience**: Sales sync validates product IDs against the store catalog. Unmapped or negative offline IDs insert `product_id = null` in `sale_items`, preventing FK violation `23503` rollbacks and ensuring zero transaction drops.
+- **Sales History Retention for Deactivated Staff**: Queries use `LEFT JOIN users` so sales made by deactivated or deleted cashiers remain permanently accessible in history, dashboard analytics, and receipt lookups.
+- **Store Profile Null-Clearing**: `PUT /api/auth/store` allows clearing optional store profile fields (`phone`, `address`, `email`, `momo_number`, `om_number`, `logo_url`) via conditional updates.
+- **Full Backup & Disaster Recovery Coverage**: JSON export and atomic restore include `suppliers`, `customers` (with loyalty points/segments), and `stock_movements` with mapped relational IDs.
 
 ### 🔑 v1.3.2 (Released August 22, 2026)
 - **Emergency access repaired**: all **8** preset logins (1 Admin, 2 Managers, 5 Sellers) now sign in by **both password and PIN**, online or offline. The Admin entry had silently stopped working on any shop that completed setup — the owner's account took over `admin@store.com` and replaced its credentials.
