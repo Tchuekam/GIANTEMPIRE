@@ -1,11 +1,11 @@
-﻿{
-    "url":  "https://tchuekam.com/downloads/magida/MAGIDA-1.5.0.apk",
-    "minAndroid":  "5.1",
-    "size":  "3.43 MB",
-    "notes":  "MAGIDA v1.5.0 — Fleet Observability, Crash Recovery, Remote Control \u0026 OTA Platform: Added real-time device telemetry with PostHog, authoritative session lifecycle \u0026 crash duration tracking, global error boundaries with deduplication, real-world performance monitors, dynamic remote configuration \u0026 feature flag kill-switches with deterministic percentage rollouts, 3-tier OTA web bundle hotfixes without APK reinstallation, and download proxy with SHA-256 IP anonymization.",
-    "versionCode":  10500,
-    "sha256":  "d431e1a7f18ac1a366f1fc0302d442b49617db30c6fa7de37f5024c499891fab",
-    "bytes":  3592325,
-    "releasedAt":  "2026-08-29T13:30:00.000Z",
-    "versionName":  "1.5.0"
+{
+  "versionName": "1.5.0",
+  "versionCode": 10500,
+  "url": "https://tchuekam.com/downloads/magida/MAGIDA-1.5.0.apk",
+  "size": "3.48 MB",
+  "bytes": 3648894,
+  "sha256": "e36b1ab0eb6ba1ca88a2d53af40615b5f15e44f85dcc931b8f0a6d581e6f7878",
+  "minAndroid": "5.1",
+  "notes": "MAGIDA v1.5.0 — Offline-first retail ERP & POS with AI copilot.",
+  "releasedAt": "2026-08-29T15:48:46.358Z"
 }
