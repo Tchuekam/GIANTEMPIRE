@@ -235,6 +235,7 @@ const config = {
           {to: '/getting-started', label: 'Getting Started', position: 'left'},
           {to: '/features', label: 'Features', position: 'left'},
           {to: '/resources', label: 'Resources', position: 'left'},
+          {href: 'https://sphr-tchuekam.netlify.app', label: 'SPHR', position: 'left'},
           {to: '/changelog', label: 'Changelog', position: 'left'},
           {to: '/faq', label: 'FAQ', position: 'left'},
           {
@@ -281,6 +282,7 @@ const config = {
               {label: 'AI Capabilities', to: '/ai-capabilities'},
               {label: 'Installation', to: '/installation'},
               {label: 'Updates', to: '/updates'},
+              {label: 'SPHR — Spatial Viewer', href: 'https://sphr-tchuekam.netlify.app'},
             ],
           },
           {
