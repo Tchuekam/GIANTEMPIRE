@@ -1,6 +1,7 @@
 ---
 id: privacy
 title: Privacy Policy
+description: TchueKAM Agent's privacy policy — what data stays on your machine and what GianTecH Empire never collects.
 sidebar_position: 11
 ---
 

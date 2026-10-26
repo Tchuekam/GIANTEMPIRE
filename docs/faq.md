@@ -1,8 +1,57 @@
 ---
 id: faq
 title: FAQ
+description: Answers to common questions about TchueKAM Agent — pricing, privacy, data storage, updates, and supported platforms.
 sidebar_position: 9
 ---
+
+import Head from '@docusaurus/Head';
+
+<Head>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': [
+        {
+          '@type': 'Question',
+          'name': 'What is TchueKAM Agent?',
+          'acceptedAnswer': {'@type': 'Answer', 'text': 'TchueKAM is a native desktop AI assistant. It runs as a real application on your computer (not in a browser tab) and helps you work with text, code, and files using AI.'}
+        },
+        {
+          '@type': 'Question',
+          'name': 'Is TchueKAM free?',
+          'acceptedAnswer': {'@type': 'Answer', 'text': 'Yes. TchueKAM is free to download and use.'}
+        },
+        {
+          '@type': 'Question',
+          'name': 'Does TchueKAM work offline?',
+          'acceptedAnswer': {'@type': 'Answer', 'text': 'TchueKAM needs an internet connection for AI responses and updates. Your locally stored data (conversations, settings) works offline.'}
+        },
+        {
+          '@type': 'Question',
+          'name': 'Where is my data stored?',
+          'acceptedAnswer': {'@type': 'Answer', 'text': 'On your computer — Windows: %AppData%\\TchueKAM, macOS: ~/Library/Application Support/TchueKAM, Linux: ~/.config/TchueKAM. Nothing is uploaded unless you explicitly enable cloud sync.'}
+        },
+        {
+          '@type': 'Question',
+          'name': 'Does TchueKAM collect telemetry?',
+          'acceptedAnswer': {'@type': 'Answer', 'text': 'TchueKAM collects anonymous usage statistics by default to help improve the product. You can opt out anytime in Settings → Privacy → Telemetry.'}
+        },
+        {
+          '@type': 'Question',
+          'name': 'What operating systems are supported?',
+          'acceptedAnswer': {'@type': 'Answer', 'text': 'Windows 10 or later (64-bit), macOS 11 Big Sur or later (Intel and Apple Silicon), and Linux (Ubuntu 20.04+, Fedora 36+, or any glibc 2.31+ distro).'}
+        },
+        {
+          '@type': 'Question',
+          'name': 'Can I run TchueKAM in my company?',
+          'acceptedAnswer': {'@type': 'Answer', 'text': 'Yes. TchueKAM is suitable for business use. For privacy-sensitive environments, turn off telemetry and conversation sync in Settings.'}
+        }
+      ]
+    })}
+  </script>
+</Head>
 
 # Frequently Asked Questions
 

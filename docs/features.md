@@ -1,6 +1,7 @@
 ---
 id: features
 title: Features
+description: Full feature reference for TchueKAM Agent — conversation, the Business Hub document platform, Image Studio, agents, and more.
 sidebar_position: 4
 ---
 

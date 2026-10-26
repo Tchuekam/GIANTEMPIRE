@@ -1,6 +1,7 @@
 ---
 id: ai-capabilities
 title: AI Capabilities
+description: Full reference for what TchueKAM Agent's AI can do — reasoning, agents, vision, voice, and automation on your desktop.
 sidebar_position: 5
 ---
 

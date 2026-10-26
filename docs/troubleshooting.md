@@ -1,6 +1,7 @@
 ---
 id: troubleshooting
 title: Troubleshooting
+description: Fixes for common TchueKAM Agent issues — launch problems, update failures, and platform-specific errors.
 sidebar_position: 10
 ---
 
