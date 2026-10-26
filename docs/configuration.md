@@ -1,6 +1,7 @@
 ---
 id: configuration
 title: Configuration
+description: Where TchueKAM Agent stores its settings, and how to customize them on Windows, macOS, and Linux.
 sidebar_position: 6
 ---
 

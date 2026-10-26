@@ -5,11 +5,41 @@ sidebar_label: About the Founder & Empire
 description: Discover Rostand Tchuekam, Founder of GianTecH Empire, creator of TchueKAM Agent and Magida Supermarket Management System.
 ---
 
+import Head from '@docusaurus/Head';
+
+<Head>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ProfilePage',
+      'mainEntity': {'@id': 'https://tchuekam.com/#person'},
+      'name': 'Rostand Tchuekam & GianTecH Empire',
+      'description': 'Discover Rostand Tchuekam, Founder of GianTecH Empire, creator of TchueKAM Agent and Magida Supermarket Management System.'
+    })}
+  </script>
+</Head>
+
 # About Rostand Tchuekam & GianTecH Empire
 
-**Rostand Tchuekam** is a Cameroonian technology innovator, AI software engineer, and the Founder & CEO of **GianTecH Empire**. 
+## Who is Rostand Tchuekam (Tchuekam Loïc Rostand)?
+
+**Rostand Tchuekam** — also known as **Tchuekam Loïc Rostand** — is a Cameroonian technology innovator, AI software engineer, and the Founder & CEO of **GianTecH Empire**.
 
 Driven by a mission to build world-class technology solutions directly from Africa, Rostand has engineered flagship software systems empowering thousands of users, retail businesses, and creators globally.
+
+## What is GianTecH Empire?
+
+**GianTecH Empire** is the technology and artificial intelligence company Rostand Tchuekam founded in Cameroon. It builds autonomous AI agents and enterprise software — including **TchueKAM Agent** and **Magida** — aimed at modernizing African businesses and making advanced AI accessible to developers, students, and companies across the continent.
+
+## What does Tchuekam build?
+
+Rostand Tchuekam's flagship products under GianTecH Empire are:
+- **[TchueKAM Agent](/)** — a native desktop AI assistant and autonomous agent platform.
+- **[Magida](/magida)** — a supermarket and retail management ERP system used by retail stores and supermarkets.
+
+## What problems does GianTecH Empire solve?
+
+GianTecH Empire focuses on two gaps it sees in African tech markets: giving developers and businesses access to private, locally-controllable AI automation (via TchueKAM Agent), and replacing manual, error-prone retail operations with reliable offline-first point-of-sale and inventory software (via Magida).
 
 ---
 
@@ -47,6 +77,10 @@ Driven by a mission to build world-class technology solutions directly from Afri
 4. **Talent & Skills Training:** Educating the next generation of engineers and digital creators in artificial intelligence, software design, and automation.
 
 ---
+
+## How can businesses contact or work with GianTecH Empire?
+
+For partnerships, press, or commercial inquiries, reach GianTecH Empire through the [Contact page](/contact) — business inquiries get a dedicated response channel.
 
 ## 🔗 Connect & Links
 

@@ -88,7 +88,7 @@ const config = {
             '@type': 'Person',
             '@id': 'https://tchuekam.com/#person',
             'name': 'Rostand Tchuekam',
-            'alternateName': ['Tchuekam', 'TchueKAM', 'Tchuekam Rostand'],
+            'alternateName': ['Tchuekam', 'TchueKAM', 'Tchuekam Rostand', 'Tchuekam Loïc Rostand'],
             'url': 'https://tchuekam.com',
             'image': [
               'https://tchuekam.com/img/rostand-tchuekam-executive.jpg',
@@ -127,7 +127,7 @@ const config = {
             'name': 'GianTecH Empire',
             'alternateName': ['GianTecH', 'Tchuekam AI'],
             'url': 'https://tchuekam.com',
-            'logo': 'https://tchuekam.com/img/logo.svg',
+            'logo': 'https://tchuekam.com/img/favicon-192x192.png',
             'description': 'Leading technology and artificial intelligence organization based in Cameroon, empowering businesses with autonomous AI agents, enterprise software like Magida, and digital transformation.',
             'founder': {
               '@type': 'Person',
@@ -144,8 +144,27 @@ const config = {
             },
             'sameAs': [
               'https://www.youtube.com/@giantechempire',
-              'https://github.com/Tchuekam'
+              'https://www.youtube.com/@Tchuekam',
+              'https://github.com/Tchuekam',
+              'https://facebook.com/giantechempire'
             ]
+          },
+          {
+            '@type': 'WebSite',
+            '@id': 'https://tchuekam.com/#docs-website',
+            'name': 'TchueKAM Agent Documentation',
+            'url': 'https://tchuekam.com',
+            'publisher': {
+              '@id': 'https://tchuekam.com/#organization'
+            },
+            'potentialAction': {
+              '@type': 'SearchAction',
+              'target': {
+                '@type': 'EntryPoint',
+                'urlTemplate': 'https://tchuekam.com/search?q={search_term_string}'
+              },
+              'query-input': 'required name=search_term_string'
+            }
           },
           {
             '@type': 'SoftwareApplication',
@@ -204,6 +223,7 @@ const config = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
+          ignorePatterns: ['/search', '/search/**'],
         },
       }),
     ],
@@ -212,7 +232,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/tchuekam-social-card.png',
+      image: 'img/rostand-tchuekam-executive.jpg',
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,

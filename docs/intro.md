@@ -1,8 +1,8 @@
 ---
 id: intro
 title: Welcome to TchueKAM Agent
+description: TchueKAM Agent is a native desktop AI assistant built by Rostand Tchuekam and GianTecH Empire — install, configure, and master it here.
 sidebar_position: 1
-slug: /
 ---
 
 # Welcome to TchueKAM Agent

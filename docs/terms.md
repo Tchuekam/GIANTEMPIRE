@@ -1,6 +1,7 @@
 ---
 id: terms
 title: Terms of Service
+description: Terms of Service for downloading and using TchueKAM Agent, built by GianTecH Empire.
 sidebar_position: 12
 ---
 

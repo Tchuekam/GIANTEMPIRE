@@ -1,6 +1,7 @@
 ---
 id: community
 title: Community
+description: Where to discuss TchueKAM Agent, share feature requests, and connect with the GianTecH Empire community.
 sidebar_position: 14
 ---
 

@@ -2,7 +2,7 @@
   "name": "TchueKAM AI Creative Studio",
   "short_name": "TchueKAM",
   "description": "Ultra-Premium AI Creative Studio engineering 4K Commercials, Films & Avatars.",
-  "start_url": "/",
+  "start_url": "/explore/",
   "display": "standalone",
   "background_color": "#050507",
   "theme_color": "#050507",

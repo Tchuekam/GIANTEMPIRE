@@ -1,6 +1,7 @@
 ---
 id: contact
 title: Contact
+description: Contact GianTecH Empire for TchueKAM Agent support, bug reports, security disclosures, or business inquiries.
 sidebar_position: 13
 ---
 
