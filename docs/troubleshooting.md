@@ -20,7 +20,17 @@ Click **More info** → **Run anyway**. This appears because TchueKAM is new —
 Alternatively, run: `xattr -d com.apple.quarantine /Applications/TchueKAM.app`
 
 ### Linux: AppImage won't run
-Make it executable: `chmod +x TchuekaM-Setup-linux-x64.AppImage`. If you see _"AppImage requires FUSE"_, install it: `sudo apt install libfuse2` (Ubuntu/Debian) or `sudo dnf install fuse` (Fedora).
+Make it executable: `chmod +x TchueKAM-*.AppImage`. If you see _"AppImage requires FUSE"_, install it: `sudo apt install libfuse2` (Ubuntu/Debian) or `sudo dnf install fuse` (Fedora).
+
+### The installer file is only a few bytes (or won't run at all)
+A real Windows installer is over 100 MB. A file of a few bytes named `TchueKAM-Setup.exe` is a broken download from before the site was fixed. Delete it and download again from the [installation page](installation).
+
+### First launch never finishes, or says setup failed
+On first launch TchueKAM downloads and installs its runtime. It needs an internet connection that can reach GitHub (`github.com` and `raw.githubusercontent.com`) and the usual package download sites; a VPN or corporate proxy that blocks them makes setup fail. On a fresh machine it can take several minutes.
+
+If it fails, choose **Reload and retry**. If it keeps failing, send us the newest `bootstrap-*.log` and `desktop.log` from the logs folder:
+   - Windows: `%LOCALAPPDATA%\hermes\logs`
+   - macOS / Linux: `~/.hermes/logs`
 
 ## TchueKAM crashes on startup
 1. Check **Settings → Updates** for a newer version

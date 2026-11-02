@@ -10,7 +10,7 @@ const STATIC_CHANGELOG = [
     notes: `
 - Native desktop AI assistant with full tool execution & session persistence.
 - High-aesthetic web dashboard, terminal interface, and Docusaurus site integration.
-- Direct self-hosted installer distribution endpoints for Windows, macOS, and Linux.
+- Windows installer published on GitHub Releases.
 - End-to-end authentication security and public API route allowlists.
     `,
   },
