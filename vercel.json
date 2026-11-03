@@ -1,0 +1,50 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/explore",
+      "destination": "/explore/",
+      "permanent": false
+    },
+    {
+      "source": "/TchueKAM-Setup.exe",
+      "destination": "https://github.com/Tchuekam/tchuekam-desktop/releases/latest/download/TchueKAM-Setup.exe",
+      "permanent": false
+    },
+    {
+      "source": "/downloads/TchueKAM-Setup.exe",
+      "destination": "https://github.com/Tchuekam/tchuekam-desktop/releases/latest/download/TchueKAM-Setup.exe",
+      "permanent": false
+    },
+    {
+      "source": "/TchueKAM-Mac-arm64.dmg",
+      "destination": "https://github.com/Tchuekam/tchuekam-desktop/releases/latest",
+      "permanent": false
+    },
+    {
+      "source": "/TchueKAM-Mac-x64.dmg",
+      "destination": "https://github.com/Tchuekam/tchuekam-desktop/releases/latest",
+      "permanent": false
+    },
+    {
+      "source": "/TchueKAM-Linux.AppImage",
+      "destination": "https://github.com/Tchuekam/tchuekam-desktop/releases/latest",
+      "permanent": false
+    },
+    {
+      "source": "/downloads/TchueKAM-Mac-arm64.dmg",
+      "destination": "https://github.com/Tchuekam/tchuekam-desktop/releases/latest",
+      "permanent": false
+    },
+    {
+      "source": "/downloads/TchueKAM-Mac-x64.dmg",
+      "destination": "https://github.com/Tchuekam/tchuekam-desktop/releases/latest",
+      "permanent": false
+    },
+    {
+      "source": "/downloads/TchueKAM-Linux.AppImage",
+      "destination": "https://github.com/Tchuekam/tchuekam-desktop/releases/latest",
+      "permanent": false
+    }
+  ]
+}

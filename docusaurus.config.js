@@ -1,6 +1,6 @@
 // @ts-check
 // TchueKAM Agent — official documentation site
-// Source of truth for releases: github.com/Tchuekam/tchuekam-agent
+// Source of truth for releases: github.com/Tchuekam/tchuekam-desktop
 
 import {themes as prismThemes} from 'prism-react-renderer';
 

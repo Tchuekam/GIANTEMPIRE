@@ -26,23 +26,25 @@ import LatestRelease from '@site/src/components/LatestRelease';
 
 ## Verify your download
 
-After downloading, you can verify the file matches the published checksum on the [latest release page](https://github.com/Tchuekam/tchuekam-desktop/releases/latest).
+After downloading, compare the file's SHA-256 with the digest GitHub shows next to it on the [latest release page](https://github.com/Tchuekam/tchuekam-desktop/releases/latest).
 
 **Windows (PowerShell):**
 ```powershell
-Get-FileHash -Algorithm SHA256 TchuekaM-Setup-win-x64.exe
+Get-FileHash -Algorithm SHA256 .\TchueKAM-Setup.exe
 ```
 
 **macOS / Linux:**
 ```bash
-shasum -a 256 TchuekaM-Setup-*.dmg
+shasum -a 256 TchueKAM-*.dmg
 ```
+
+A real Windows installer is over 100 MB. If your `TchueKAM-Setup.exe` is only a few bytes, it is a broken download from before the site was fixed — delete it and download it again with the button above.
 
 ## Silent / unattended install
 
 ### Windows
 ```powershell
-TchuekaM-Setup-win-x64.exe /S /D=C:\Apps\TchueKAM
+.\TchueKAM-Setup.exe /S /D=C:\Apps\TchueKAM
 ```
 
 - `/S` runs silently (no UI)

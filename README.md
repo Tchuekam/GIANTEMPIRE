@@ -22,9 +22,9 @@ npm run serve
 
 ## How the changelog stays current
 
-The Changelog page (`docs/changelog.mdx`) renders `<Changelog />`, which fetches `https://api.github.com/repos/Tchuekam/tchuekam-agent/releases` at page load. Publish a new GitHub Release → it shows up here automatically. No edits needed.
+The Changelog page (`docs/changelog.mdx`) renders `<Changelog />`, a static list: add an entry to `STATIC_CHANGELOG` in `src/components/Changelog.tsx` when you publish a release (it does not read GitHub).
 
-Same for download buttons — `<LatestRelease />` pulls the latest release's assets dynamically.
+Download buttons do stay current on their own — `<LatestRelease />` asks the GitHub API for the latest release of `Tchuekam/tchuekam-desktop` and links straight to its assets. Never put installers (or placeholders for them) in `static/`: they must be GitHub release assets, and `vercel.json` / `static/_redirects` send the old `/TchueKAM-Setup.exe` paths there.
 
 ## Adding a new page
 

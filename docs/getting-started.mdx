@@ -15,18 +15,18 @@ Get TchueKAM Agent running on your computer in under five minutes.
 
 <LatestRelease />
 
-The download starts immediately. Save the installer somewhere you can find it (your Downloads folder is fine).
+The download comes from GitHub Releases. Save the installer somewhere you can find it (your Downloads folder is fine).
 
 ## 2. Install
 
 ### Windows
-Double-click `TchuekaM-Setup-win-x64.exe`. The installer will:
+Double-click `TchueKAM-Setup.exe`. If Windows shows **"Windows protected your PC"**, choose **More info** → **Run anyway** (the installer is not code-signed yet). The installer will:
 - Ask where to install TchueKAM (default: `%LocalAppData%\Programs\TchueKAM`)
 - Create a desktop shortcut and Start menu entry
 - Take about 30 seconds
 
 ### macOS
-Open `TchuekaM-Setup-mac-arm64.dmg` (or `-x64.dmg` on Intel Macs). Drag **TchueKAM** to **Applications**. The first launch will ask permission to run an app downloaded from the internet — click **Open**.
+Open the downloaded `.dmg` for your Mac (Apple Silicon or Intel). Drag **TchueKAM** to **Applications**. The first launch will ask permission to run an app downloaded from the internet — click **Open**.
 
 ### Linux
 The AppImage is portable: download, `chmod +x`, double-click to run. Or place it in `~/.local/bin/` to make it available everywhere.
@@ -35,7 +35,7 @@ The AppImage is portable: download, `chmod +x`, double-click to run. Or place it
 
 Open TchueKAM the same way you launch any other app. On first launch, TchueKAM will:
 
-1. Run a short one-time setup (about 15–30 seconds)
+1. Run a one-time setup that installs its runtime (Python, Node.js, Git and the agent itself). This needs an internet connection and can take several minutes on a fresh machine — keep the window open
 2. Ask for microphone permission if you want voice input (optional, you can grant later)
 3. Show you the main workspace
 

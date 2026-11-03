@@ -11,3 +11,15 @@
 /explore /explore/index.html 200
 /portfolio /explore/index.html 301!
 /studio /explore/index.html 301!
+
+# Desktop installers are GitHub release assets, not files on this site. These
+# paths used to serve 66-byte text placeholders; keep old links working by
+# sending them to the real release (see vercel.json for the Vercel equivalent).
+/TchueKAM-Setup.exe             https://github.com/Tchuekam/tchuekam-desktop/releases/latest/download/TchueKAM-Setup.exe  302!
+/downloads/TchueKAM-Setup.exe   https://github.com/Tchuekam/tchuekam-desktop/releases/latest/download/TchueKAM-Setup.exe  302!
+/TchueKAM-Mac-arm64.dmg         https://github.com/Tchuekam/tchuekam-desktop/releases/latest  302!
+/TchueKAM-Mac-x64.dmg           https://github.com/Tchuekam/tchuekam-desktop/releases/latest  302!
+/TchueKAM-Linux.AppImage        https://github.com/Tchuekam/tchuekam-desktop/releases/latest  302!
+/downloads/TchueKAM-Mac-arm64.dmg   https://github.com/Tchuekam/tchuekam-desktop/releases/latest  302!
+/downloads/TchueKAM-Mac-x64.dmg     https://github.com/Tchuekam/tchuekam-desktop/releases/latest  302!
+/downloads/TchueKAM-Linux.AppImage  https://github.com/Tchuekam/tchuekam-desktop/releases/latest  302!
