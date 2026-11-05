@@ -188,7 +188,7 @@ const config = {
             '@id': 'https://tchuekam.com/#tchuekam-agent',
             'name': 'TchueKAM Agent',
             'applicationCategory': 'DeveloperApplication',
-            'operatingSystem': 'Windows, macOS, Linux',
+            'operatingSystem': 'Windows, macOS, Linux, Android, Web',
             'author': {
               '@type': 'Person',
               '@id': 'https://tchuekam.com/#person'

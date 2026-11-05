@@ -11,7 +11,7 @@ export default function Home() {
       title="TchueKAM Agent — Native desktop AI assistant"
       description="Download TchueKAM Agent and turn your computer into an AI-native workspace."
     >
-      <main style={{padding: '80px 24px', textAlign: 'center', maxWidth: 1100, margin: '0 auto'}}>
+      <main style={{padding: '80px 24px', textAlign: 'center', maxWidth: 1100, width: '100%', boxSizing: 'border-box', margin: '0 auto'}}>
         <span style={{
           display: 'inline-block',
           background: 'rgba(0,242,254,0.12)',
@@ -35,7 +35,7 @@ export default function Home() {
           {siteConfig.tagline}
         </p>
 
-        <div style={{display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 16}}>
+        <div style={{display: 'flex', gap: 14, justifyContent: 'center', alignItems: 'flex-start', flexWrap: 'wrap', marginBottom: 16}}>
           <LatestRelease />
           <Link to="/getting-started" className="button button--secondary button--lg" style={{textDecoration: 'none'}}>
             Read the docs →
@@ -43,7 +43,7 @@ export default function Home() {
         </div>
 
         <p style={{opacity: 0.5, fontSize: 13, marginTop: 12}}>
-          Free · Open source · Windows, macOS, Linux
+          Free · Open source · Windows, macOS, Linux, Android &amp; Web
         </p>
 
         <section style={{marginTop: 80, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24, textAlign: 'left'}}>
@@ -61,7 +61,7 @@ export default function Home() {
           />
           <Feature
             title="Cross-platform"
-            body="Same experience on Windows, macOS, and Linux."
+            body="Desktop apps for Windows, macOS, and Linux, an Android app, and a Web App you can open from any browser."
           />
         </section>
 

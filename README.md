@@ -24,7 +24,25 @@ npm run serve
 
 The Changelog page (`docs/changelog.mdx`) renders `<Changelog />`, which fetches `https://api.github.com/repos/Tchuekam/tchuekam-agent/releases` at page load. Publish a new GitHub Release → it shows up here automatically. No edits needed.
 
-Same for download buttons — `<LatestRelease />` pulls the latest release's assets dynamically.
+## Downloads: desktop, Android, and the Web App
+
+`<LatestRelease />` (the card on the home page and on `/installation`) offers every way to get TchueKAM:
+
+| Platform | Where it comes from |
+|---|---|
+| Windows, macOS, Linux | Static files in `static/`, served from this site (`/TchueKAM-Setup.exe`, …) |
+| Android | The APK attached to a GitHub release of [`Tchuekam/tchuekam-desktop`](https://github.com/Tchuekam/tchuekam-desktop/releases) |
+| iPhone / iPad, any browser | The Web App at `https://agent.tchuekam.com` (set in `src/components/downloads.ts`) |
+
+The primary button follows the visitor's platform (Android → APK, iPhone/iPad → Web App, otherwise the matching desktop installer).
+
+### Publishing the Android APK
+
+1. Build the APK from `apps/mobile` in `tchuekam-desktop`.
+2. On GitHub, open the release (Releases → Edit) and attach the file as **`TchueKAM-Mobile.apk`**. Keep that exact name: the app's own "Download APK" links (`/api/download/android`) use it too, so one upload turns on every link.
+3. That's all. The site asks the GitHub releases API for the newest published release that carries the APK, so the download switches on by itself — no edit or redeploy here. Until it exists, the card shows "Coming soon" and points visitors at the Web App instead of a dead link.
+
+The release can be the desktop one or a separate Android release; the site finds the newest release that has the APK.
 
 ## Adding a new page
 

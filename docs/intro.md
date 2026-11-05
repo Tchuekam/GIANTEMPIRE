@@ -13,7 +13,7 @@ This documentation covers everything you need to install, configure, and master 
 
 ## Quick links
 
-- **[Install TchueKAM](installation)** — Download for Windows, macOS, or Linux
+- **[Install TchueKAM](installation)** — Download for Windows, macOS, Linux, or Android, or open the Web App
 - **[Getting Started](getting-started)** — Your first 10 minutes with TchueKAM
 - **[Features](features)** — Full feature reference
 - **[Changelog](changelog)** — What's new in each release
@@ -26,7 +26,7 @@ This documentation covers everything you need to install, configure, and master 
 | **Native and fast** | Runs as a real desktop app, not a browser tab. Instant launch, low memory. |
 | **Private by default** | Your data stays on your machine. You decide what gets shared. |
 | **Auto-updates** | New releases install themselves silently in the background. |
-| **Cross-platform** | Windows, macOS (Apple Silicon + Intel), and Linux. |
+| **Cross-platform** | Windows, macOS (Apple Silicon + Intel), and Linux — plus an Android app and a Web App ([Mobile Companion](mobile-companion)). |
 | **Free** | No subscriptions, no paywalls. |
 
 ## Get help
