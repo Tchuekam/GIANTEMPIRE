@@ -61,3 +61,56 @@ article {
   --ifm-footer-background-color: #08090a;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
+
+/* Download buttons: let a long label wrap on a narrow phone instead of widening the whole page. */
+.tchuekam-cta {
+  white-space: normal;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Secondary download call-to-action next to the primary button (Web App / install guide).
+   Outlined so the cyan primary button stays the one obvious choice, readable in both themes. */
+.tchuekam-cta-secondary {
+  background: transparent;
+  border: 1px solid #00b4c4;
+  color: var(--ifm-font-color-base);
+  font-weight: 600;
+  text-decoration: none;
+}
+.tchuekam-cta-secondary:hover {
+  background: rgba(0, 229, 255, 0.12);
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+}
+[data-theme='dark'] .tchuekam-cta-secondary {
+  border-color: #00F2FE;
+}
+
+/* Download card on phones: the "File type" column moves under the platform name, so the download
+   links in the last column are never clipped, and the two buttons stack at full width. */
+.tchuekam-dl-type-inline {
+  display: none;
+}
+@media (max-width: 680px) {
+  .tchuekam-cta-row > .tchuekam-cta {
+    flex: 1 1 100%;
+  }
+  .tchuekam-dl-table th,
+  .tchuekam-dl-table td {
+    padding: 0.6rem 0.5rem;
+  }
+  .tchuekam-dl-table .tchuekam-dl-type {
+    display: none;
+  }
+  .tchuekam-dl-table .tchuekam-dl-type-inline {
+    display: block;
+    margin-top: 2px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.65;
+  }
+  .tchuekam-dl-table td:last-child {
+    white-space: nowrap;
+  }
+}

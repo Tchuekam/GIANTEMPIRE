@@ -80,6 +80,8 @@ Rebuilt for flagship-desktop responsiveness.
 
 ## Cross-platform & always current
 - **Windows, macOS & Linux** — one native app across your devices
+- **Android** — install the app on your phone or tablet ([guide](mobile-companion#android-app))
+- **Web App** — open it from any browser, or add it to an iPhone or iPad home screen ([guide](mobile-companion#pwa-install))
 - **Free & open source**
 - **Automatic updates** — new versions install themselves; you're always on the latest
 
