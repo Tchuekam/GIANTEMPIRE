@@ -87,6 +87,15 @@ article {
   border-color: #00F2FE;
 }
 
+/* Docusaurus sizes footer links to their text (width: max-content) on small screens, so a long
+   label - the Investorlist.com link - cannot wrap and makes every page scroll sideways on a phone
+   (iOS Safari then zooms the whole page out). Let the link wrap inside its column instead. */
+@media (max-width: 996px) {
+  .footer__link-item {
+    width: auto;
+  }
+}
+
 /* Download card on phones: the "File type" column moves under the platform name, so the download
    links in the last column are never clipped, and the two buttons stack at full width. */
 .tchuekam-dl-type-inline {
