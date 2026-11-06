@@ -199,6 +199,114 @@ export function useAndroidApk(): AndroidApk {
   return apk;
 }
 
+// ---------------------------------------------------------------------------
+// Web app availability
+// ---------------------------------------------------------------------------
+//
+// The web app is hosted separately from this site. If its address stops resolving (a missing DNS
+// record, a deployment that was taken down) every "Open the Web App" link would send visitors to a
+// browser error page. So the page checks the host first and says "coming soon" until it answers -
+// and switches on again by itself, with no edit here, once it does.
+
+export type WebAppStatus = 'checking' | 'up' | 'down';
+
+/** Only a real "cannot reach it" answer may hide the Web App. Not knowing yet must not. */
+export function isWebAppAvailable(status: WebAppStatus): boolean {
+  return status !== 'down';
+}
+
+const WEB_UP_TTL_MS = 5 * 60 * 1000;
+const WEB_DOWN_TTL_MS = 60 * 1000; // re-check sooner, so a fixed app comes back quickly
+const WEB_PROBE_TIMEOUT_MS = 8000;
+const WEB_PROBE_RETRY_MS = 1200;
+
+function delay(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * One reachability attempt: true if the host answered at all (any HTTP status), false if it could
+ * not be reached (the name does not resolve, the connection is refused, or it times out).
+ *
+ * A page cannot read another site's response without CORS, but a `no-cors` request still settles
+ * differently: it resolves (opaque) once the server has answered, and rejects when the connection
+ * fails. That is the failure that matters here. HEAD keeps it light on the app's server.
+ */
+function reachable(url: string): Promise<boolean> {
+  try {
+    const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    const timer = controller ? setTimeout(() => controller.abort(), WEB_PROBE_TIMEOUT_MS) : undefined;
+    return fetch(url, {method: 'HEAD', mode: 'no-cors', cache: 'no-store', signal: controller?.signal})
+      .then(
+        () => true,
+        () => false,
+      )
+      .finally(() => clearTimeout(timer));
+  } catch {
+    return Promise.resolve(true); // cannot probe in this browser: do not hide a link we cannot judge
+  }
+}
+
+function readWebCache(key: string): WebAppStatus | null {
+  try {
+    const raw = window.sessionStorage.getItem(key);
+    if (!raw) return null;
+    const entry = JSON.parse(raw);
+    if (entry?.status !== 'up' && entry?.status !== 'down') return null;
+    const ttl = entry.status === 'down' ? WEB_DOWN_TTL_MS : WEB_UP_TTL_MS;
+    return typeof entry.t === 'number' && Date.now() - entry.t <= ttl ? entry.status : null;
+  } catch {
+    return null; // storage can be blocked (private mode, sandboxed frames)
+  }
+}
+
+function writeWebCache(key: string, status: WebAppStatus): void {
+  try {
+    window.sessionStorage.setItem(key, JSON.stringify({t: Date.now(), status}));
+  } catch {
+    // Not worth failing over.
+  }
+}
+
+/**
+ * Whether the web app's host answers, so the page only links to it when it does.
+ *
+ * Starts as "checking", which still shows the link: the server-rendered page, a slow check and a
+ * browser that cannot check all behave like a normal link.
+ */
+export function useWebApp(url: string = WEB_APP_URL): WebAppStatus {
+  const [status, setStatus] = useState<WebAppStatus>('checking');
+
+  useEffect(() => {
+    // Being offline is not "the app is down": say nothing rather than hide a working link.
+    if (typeof navigator !== 'undefined' && navigator.onLine === false) return undefined;
+
+    let cancelled = false;
+    const cacheKey = `tchuekam_webapp_v1:${url}`;
+
+    const cached = readWebCache(cacheKey);
+    if (cached) {
+      setStatus(cached);
+      return undefined;
+    }
+
+    // One retry, so a single dropped packet does not hide a working app.
+    reachable(url)
+      .then((ok) => ok || delay(WEB_PROBE_RETRY_MS).then(() => reachable(url)))
+      .then((ok) => {
+        const next: WebAppStatus = ok ? 'up' : 'down';
+        writeWebCache(cacheKey, next);
+        if (!cancelled) setStatus(next);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [url]);
+
+  return status;
+}
+
 export function track(event: string, props: Record<string, unknown> = {}): void {
   try {
     if (typeof window !== 'undefined' && (window as any).posthog?.capture) {

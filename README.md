@@ -32,15 +32,19 @@ The Changelog page (`docs/changelog.mdx`) renders `<Changelog />`, which fetches
 |---|---|
 | Windows, macOS, Linux | Static files in `static/`, served from this site (`/TchueKAM-Setup.exe`, …) |
 | Android | The APK attached to a GitHub release of [`Tchuekam/tchuekam-desktop`](https://github.com/Tchuekam/tchuekam-desktop/releases) |
-| iPhone / iPad, any browser | The Web App at `https://agent.tchuekam.com` (set in `src/components/downloads.ts`) |
+| iPhone / iPad, any browser | The Web App at `https://agent.tchuekam.com` (`WEB_APP_URL` in `src/components/downloads.ts`) |
 
 The primary button follows the visitor's platform (Android → APK, iPhone/iPad → Web App, otherwise the matching desktop installer).
+
+### The Web App must be reachable
+
+Before offering the Web App, the page checks that `WEB_APP_URL` answers (a `no-cors` `HEAD` request from the visitor's browser; it only needs to know the host responded). If the address does not resolve or the app is down, the card, the Android docs card and the Mobile Companion page show "Coming soon" / a notice instead of a link to a browser error page, and switch back on by themselves once the host answers. To move the Web App, change `WEB_APP_URL`.
 
 ### Publishing the Android APK
 
 1. Build the APK from `apps/mobile` in `tchuekam-desktop`.
 2. On GitHub, open the release (Releases → Edit) and attach the file as **`TchueKAM-Mobile.apk`**. Keep that exact name: the app's own "Download APK" links (`/api/download/android`) use it too, so one upload turns on every link.
-3. That's all. The site asks the GitHub releases API for the newest published release that carries the APK, so the download switches on by itself — no edit or redeploy here. Until it exists, the card shows "Coming soon" and points visitors at the Web App instead of a dead link.
+3. That's all. The site asks the GitHub releases API for the newest published release that carries the APK, so the download switches on by itself — no edit or redeploy here. Until it exists, the card shows "Coming soon" (and points visitors at the Web App while that is reachable) instead of a dead link.
 
 The release can be the desktop one or a separate Android release; the site finds the newest release that has the APK.
 

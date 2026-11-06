@@ -46,7 +46,7 @@ import Head from '@docusaurus/Head';
         {
           '@type': 'Question',
           'name': 'Is there a mobile app or a web version?',
-          'acceptedAnswer': {'@type': 'Answer', 'text': 'Yes. Download the Android app (APK) from the download page, or open the Web App at agent.tchuekam.com in any modern browser. On iPhone and iPad, open the Web App in Safari and choose Share, then Add to Home Screen.'}
+          'acceptedAnswer': {'@type': 'Answer', 'text': 'Yes. Download the Android app (APK) from the download page, or open the Web App in any modern browser. On iPhone and iPad, open the Web App in Safari and choose Share, then Add to Home Screen.'}
         },
         {
           '@type': 'Question',
@@ -91,10 +91,10 @@ Yes. Install on as many machines as you want. Each install is independent unless
 - macOS 11 Big Sur or later (Intel and Apple Silicon)
 - Linux (Ubuntu 20.04+, Fedora 36+, or any glibc 2.31+ distro)
 - Android 7.0 or later (APK download)
-- Any current browser through the [Web App](https://agent.tchuekam.com), including Safari on iPhone and iPad
+- Any current browser through the [Web App](mobile-companion#pwa-install), including Safari on iPhone and iPad
 
 ## Is there a mobile app or a web version?
-Yes. Download the Android app (APK) from the [download page](installation), or open the [Web App](https://agent.tchuekam.com) in any modern browser. On iPhone and iPad, open the Web App in Safari and choose **Share → Add to Home Screen**. Step by step: [Mobile Companion](mobile-companion).
+Yes. Download the Android app (APK) from the [download page](installation), or open the [Web App](mobile-companion#pwa-install) in any modern browser. On iPhone and iPad, open the Web App in Safari and choose **Share → Add to Home Screen**. Step by step: [Mobile Companion](mobile-companion).
 
 ## How do I uninstall?
 - **Windows:** Settings → Apps → TchueKAM → Uninstall

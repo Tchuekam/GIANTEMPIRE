@@ -123,3 +123,10 @@ article {
     white-space: nowrap;
   }
 }
+
+/* A call-to-action that is not available yet: same shape as the real button, clearly inert. */
+.tchuekam-cta-disabled {
+  opacity: 0.55;
+  cursor: default;
+  pointer-events: none;
+}
