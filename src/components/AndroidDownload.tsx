@@ -6,7 +6,17 @@
 
 import React from 'react';
 import Link from '@docusaurus/Link';
-import {ANDROID_APK_NAME, MOBILE_GUIDE_PATH, WEB_APP_URL, isApkDownloadable, track, trackDownload, useAndroidApk} from './downloads';
+import {
+  ANDROID_APK_NAME,
+  MOBILE_GUIDE_PATH,
+  WEB_APP_URL,
+  isApkDownloadable,
+  isWebAppAvailable,
+  track,
+  trackDownload,
+  useAndroidApk,
+  useWebApp,
+} from './downloads';
 
 const ACCENT = '#00F2FE';
 
@@ -21,7 +31,9 @@ function Spec({label, value}: {label: string; value: string}) {
 
 export default function AndroidDownload() {
   const apk = useAndroidApk();
+  const web = useWebApp();
   const ready = isApkDownloadable(apk);
+  const webReady = isWebAppAvailable(web);
 
   const badge = apk.version ? apk.version : ready ? 'Latest' : 'Coming soon';
 
@@ -65,7 +77,7 @@ export default function AndroidDownload() {
           >
             ⬇ Download for Android
           </a>
-        ) : (
+        ) : webReady ? (
           <a
             href={WEB_APP_URL}
             target="_blank"
@@ -76,14 +88,27 @@ export default function AndroidDownload() {
           >
             🌐 Open the Web App
           </a>
+        ) : (
+          <span
+            className="button button--lg tchuekam-cta tchuekam-cta-secondary tchuekam-cta-disabled"
+            aria-disabled="true"
+          >
+            Coming soon
+          </span>
         )}
         {ready && apk.size && <span style={{opacity: 0.55, fontSize: 13}}>APK · {apk.size}</span>}
       </div>
 
       {!ready && (
         <p style={{margin: '0 0 20px', fontSize: 14, lineHeight: 1.6, maxWidth: '60ch'}}>
-          The Android APK is being published. Until it is, the Web App runs on your phone — add it to your
-          home screen with the steps in <Link to={`${MOBILE_GUIDE_PATH}#pwa-install`}>Quick PWA Installation</Link>.
+          {webReady ? (
+            <>
+              The Android APK is being published. Until it is, the Web App runs on your phone — add it to your
+              home screen with the steps in <Link to={`${MOBILE_GUIDE_PATH}#pwa-install`}>Quick PWA Installation</Link>.
+            </>
+          ) : (
+            'The Android APK and the Web App are being published. This page switches them on as soon as they are available.'
+          )}
         </p>
       )}
 

@@ -13,9 +13,11 @@ import {
   WEB_APP_URL,
   detectOS,
   isApkDownloadable,
+  isWebAppAvailable,
   track,
   trackDownload,
   useAndroidApk,
+  useWebApp,
 } from './downloads';
 import type {AndroidApk, OS} from './downloads';
 
@@ -66,8 +68,9 @@ interface Cta {
   onClick: () => void;
 }
 
-// The one button the visitor most likely wants, based on what they are using.
-function primaryCta(os: OS, apk: AndroidApk): Cta {
+// The one button the visitor most likely wants, based on what they are using. Null means a phone
+// visitor with nothing to offer yet (no APK published and the web app unreachable).
+function primaryCta(os: OS, apk: AndroidApk, webReady: boolean): Cta | null {
   if (os === 'android' && isApkDownloadable(apk)) {
     return {
       href: apk.url,
@@ -76,8 +79,9 @@ function primaryCta(os: OS, apk: AndroidApk): Cta {
     };
   }
   // iPhone/iPad have no installer, and an Android visitor has nothing to download
-  // until the APK is published. The web app works on both today.
+  // until the APK is published. The web app covers both, as long as it is reachable.
   if (os === 'android' || os === 'ios') {
+    if (!webReady) return null;
     return {
       href: WEB_APP_URL,
       label: '🌐 Open the Web App',
@@ -120,16 +124,22 @@ function PlatformRow({label, type, size, children}: {label: string; type: string
   );
 }
 
+function ComingSoon() {
+  return <span style={{opacity: 0.6, fontWeight: 600}}>Coming soon</span>;
+}
+
 export function StaticDownloadSection() {
   const [os, setOS] = useState<OS>('windows');
   const apk = useAndroidApk();
+  const web = useWebApp();
 
   useEffect(() => {
     setOS(detectOS());
   }, []);
 
   const apkReady = isApkDownloadable(apk);
-  const primary = primaryCta(os, apk);
+  const webReady = isWebAppAvailable(web);
+  const primary = primaryCta(os, apk, webReady);
 
   return (
     <div style={{padding: '1.5rem', border: '1px solid rgba(0,242,254,0.15)', borderRadius: 12, background: 'rgba(0,242,254,0.04)', minWidth: 0, maxWidth: '100%', boxSizing: 'border-box'}}>
@@ -155,22 +165,31 @@ export function StaticDownloadSection() {
       </p>
 
       <div className="tchuekam-cta-row" style={{display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 16}}>
-        <a
-          href={primary.href}
-          download={primary.download}
-          {...(primary.external ? {target: '_blank', rel: 'noopener noreferrer'} : {})}
-          className="button button--primary button--lg tchuekam-cta"
-          onClick={primary.onClick}
-          style={{textDecoration: 'none', background: '#00E5FF', color: '#07070d', fontWeight: 700}}
-        >
-          {primary.label}
-        </a>
+        {primary ? (
+          <a
+            href={primary.href}
+            download={primary.download}
+            {...(primary.external ? {target: '_blank', rel: 'noopener noreferrer'} : {})}
+            className="button button--primary button--lg tchuekam-cta"
+            onClick={primary.onClick}
+            style={{textDecoration: 'none', background: '#00E5FF', color: '#07070d', fontWeight: 700}}
+          >
+            {primary.label}
+          </a>
+        ) : (
+          <span
+            className="button button--lg tchuekam-cta tchuekam-cta-secondary tchuekam-cta-disabled"
+            aria-disabled="true"
+          >
+            📱 Mobile app coming soon
+          </span>
+        )}
 
-        {primary.external ? (
+        {primary?.external ? (
           <Link to={MOBILE_GUIDE_PATH} className="button button--lg tchuekam-cta tchuekam-cta-secondary">
             📱 Add to home screen
           </Link>
-        ) : (
+        ) : webReady ? (
           <a
             href={WEB_APP_URL}
             target="_blank"
@@ -180,7 +199,7 @@ export function StaticDownloadSection() {
           >
             🌐 Open the Web App
           </a>
-        )}
+        ) : null}
       </div>
 
       <table className="tchuekam-dl-table">
@@ -215,34 +234,46 @@ export function StaticDownloadSection() {
                 Download →
               </a>
             ) : (
-              <span style={{opacity: 0.6, fontWeight: 600}} title="The Android app is being published">
-                Coming soon
-              </span>
+              <ComingSoon />
             )}
           </PlatformRow>
           <PlatformRow label={'iPhone & iPad'} type="Web app (PWA)">
-            <Link to={MOBILE_GUIDE_PATH} style={linkStyle}>
-              Install guide →
-            </Link>
+            {webReady ? (
+              <Link to={MOBILE_GUIDE_PATH} style={linkStyle}>
+                Install guide →
+              </Link>
+            ) : (
+              <ComingSoon />
+            )}
           </PlatformRow>
           <PlatformRow label="Web" type="Any modern browser">
-            <a
-              href={WEB_APP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => track('web_app_opened', {os: 'web'})}
-              style={linkStyle}
-            >
-              Open Web App →
-            </a>
+            {webReady ? (
+              <a
+                href={WEB_APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track('web_app_opened', {os: 'web'})}
+                style={linkStyle}
+              >
+                Open Web App →
+              </a>
+            ) : (
+              <ComingSoon />
+            )}
           </PlatformRow>
         </tbody>
       </table>
 
       {apk.status === 'unpublished' && (
         <p style={{margin: '12px 0 0', fontSize: 13, lineHeight: 1.6, ...wrapToCard}}>
-          The Android app is being published. The Web App already runs on your phone — see the{' '}
-          <Link to={MOBILE_GUIDE_PATH}>install guide</Link> to add it to your home screen.
+          {webReady ? (
+            <>
+              The Android app is being published. The Web App already runs on your phone — see the{' '}
+              <Link to={MOBILE_GUIDE_PATH}>install guide</Link> to add it to your home screen.
+            </>
+          ) : (
+            'The Android app and the Web App are being published.'
+          )}
         </p>
       )}
 
