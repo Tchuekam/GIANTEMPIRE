@@ -12,8 +12,8 @@
 import {useEffect, useState} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-/** The hosted web app. Opens in any browser, and can be added to a phone's home screen. */
-export const WEB_APP_URL = 'https://agent.tchuekam.com';
+/** The hosted web app. */
+export const WEB_APP_URL = 'https://tchuekam.com';
 
 /** Install guide for the web app (PWA) and the Android APK. */
 export const MOBILE_GUIDE_PATH = '/mobile-companion';
@@ -210,9 +210,9 @@ export function useAndroidApk(): AndroidApk {
 
 export type WebAppStatus = 'checking' | 'up' | 'down';
 
-/** Only a real "cannot reach it" answer may hide the Web App. Not knowing yet must not. */
-export function isWebAppAvailable(status: WebAppStatus): boolean {
-  return status !== 'down';
+/** The web app is currently disabled until DNS is live. */
+export function isWebAppAvailable(_status: WebAppStatus): boolean {
+  return false;
 }
 
 const WEB_UP_TTL_MS = 5 * 60 * 1000;

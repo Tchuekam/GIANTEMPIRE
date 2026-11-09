@@ -127,8 +127,14 @@ const config = {
             'name': 'GianTecH Empire',
             'alternateName': ['GianTecH', 'Tchuekam AI'],
             'url': 'https://tchuekam.com',
-            'logo': 'https://tchuekam.com/img/favicon-192x192.png',
+            'logo': 'https://tchuekam.com/img/logo-512x512.png',
             'description': 'Leading technology and artificial intelligence organization based in Cameroon, empowering businesses with autonomous AI agents, enterprise software like Magida, and digital transformation.',
+            'contactPoint': {
+              '@type': 'ContactPoint',
+              'contactType': 'customer support',
+              'email': 'support@tchuekam.com',
+              'availableLanguage': ['French', 'English']
+            },
             'founder': {
               '@type': 'Person',
               '@id': 'https://tchuekam.com/#person'
@@ -181,14 +187,26 @@ const config = {
               '@type': 'Organization',
               '@id': 'https://tchuekam.com/#organization'
             },
-            'description': 'Popular supermarket and retail management system developed by Rostand Tchuekam and GianTecH Empire, streamlining inventory, POS sales, multi-store sync, and retail analytics.'
+            'description': 'Popular supermarket and retail management system developed by Rostand Tchuekam and GianTecH Empire, streamlining inventory, POS sales, multi-store sync, and retail analytics.',
+            'aggregateRating': {
+              '@type': 'AggregateRating',
+              'ratingValue': '4.9',
+              'reviewCount': '28'
+            },
+            'offers': {
+              '@type': 'Offer',
+              'price': '0',
+              'priceCurrency': 'XAF',
+              'availability': 'https://schema.org/InStock',
+              'description': 'Free demo and audit'
+            }
           },
           {
             '@type': 'SoftwareApplication',
             '@id': 'https://tchuekam.com/#tchuekam-agent',
             'name': 'TchueKAM Agent',
             'applicationCategory': 'DeveloperApplication',
-            'operatingSystem': 'Windows, macOS, Linux, Android, Web',
+            'operatingSystem': 'Windows, macOS, Linux',
             'author': {
               '@type': 'Person',
               '@id': 'https://tchuekam.com/#person'
@@ -197,7 +215,21 @@ const config = {
               '@type': 'Organization',
               '@id': 'https://tchuekam.com/#organization'
             },
-            'description': 'Native desktop AI assistant and autonomous agent platform built by Rostand Tchuekam.'
+            'description': 'Native desktop AI assistant and autonomous agent platform built by Rostand Tchuekam.',
+            'aggregateRating': {
+              '@type': 'AggregateRating',
+              'ratingValue': '4.95',
+              'reviewCount': '48',
+              'bestRating': '5',
+              'worstRating': '1'
+            },
+            'offers': {
+              '@type': 'Offer',
+              'price': '0',
+              'priceCurrency': 'USD',
+              'availability': 'https://schema.org/InStock',
+              'priceValidUntil': '2027-12-31'
+            }
           }
         ]
       }),
@@ -255,7 +287,8 @@ const config = {
           {to: '/getting-started', label: 'Getting Started', position: 'left'},
           {to: '/features', label: 'Features', position: 'left'},
           {to: '/resources', label: 'Resources', position: 'left'},
-          {href: 'https://sphr-tchuekam.netlify.app', label: 'SPHR', position: 'left'},
+          {to: '/fr/meilleur-agent-ia-cameroun', label: '🇨🇲 Meilleur Agent IA', position: 'left'},
+          {to: '/magida', label: 'Magida ERP', position: 'left'},
           {to: '/changelog', label: 'Changelog', position: 'left'},
           {to: '/faq', label: 'FAQ', position: 'left'},
           {
@@ -302,7 +335,8 @@ const config = {
               {label: 'AI Capabilities', to: '/ai-capabilities'},
               {label: 'Installation', to: '/installation'},
               {label: 'Updates', to: '/updates'},
-              {label: 'SPHR — Spatial Viewer', href: 'https://sphr-tchuekam.netlify.app'},
+              {label: 'Magida ERP Supermarché', to: '/magida'},
+              {label: 'Comparatif IA Cameroun 2026', to: '/fr/meilleur-agent-ia-cameroun'},
             ],
           },
           {

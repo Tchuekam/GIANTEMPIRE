@@ -43,7 +43,7 @@ export default function Home() {
         </div>
 
         <p style={{opacity: 0.5, fontSize: 13, marginTop: 12}}>
-          Free · Open source · Windows, macOS, Linux, Android &amp; Web
+          Free · Open source · Windows, macOS, Linux · Conçu à Yaoundé
         </p>
 
         <section style={{marginTop: 80, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24, textAlign: 'left'}}>
@@ -61,7 +61,7 @@ export default function Home() {
           />
           <Feature
             title="Cross-platform"
-            body="Desktop apps for Windows, macOS, and Linux, an Android app, and a Web App you can open from any browser."
+            body="Native desktop applications for Windows, macOS, and Linux with full offline capability."
           />
         </section>
 
@@ -98,8 +98,11 @@ export default function Home() {
                 Under the leadership of <strong>Rostand Tchuekam</strong>, GianTecH Empire designs groundbreaking technology—from <strong>TchueKAM Agent</strong> to <strong>Magida</strong>, the supermarket management system powering prominent retail stores and supermarkets.
               </p>
               <div style={{display: 'flex', gap: 12, flexWrap: 'wrap'}}>
-                <Link to="/about-founder" className="button button--primary button--sm">
-                  About Rostand & GianTecH →
+                <Link to="/fr/meilleur-agent-ia-cameroun" className="button button--primary button--sm" style={{background: 'linear-gradient(90deg, #00F2FE 0%, #4FACFE 100%)', color: '#07070d', fontWeight: 700}}>
+                  🇨🇲 N°1 Agent IA Cameroun 2026 →
+                </Link>
+                <Link to="/about-founder" className="button button--outline button--secondary button--sm">
+                  About Rostand &amp; GianTecH →
                 </Link>
                 <Link to="/magida" className="button button--outline button--secondary button--sm">
                   Explore Magida ERP →

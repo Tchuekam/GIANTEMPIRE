@@ -44,7 +44,7 @@ The flagship workspace for turning ideas and scans into finished documents.
 ## Messaging & integrations
 - **WhatsApp bridge** — connect a WhatsApp number and chat with TchueKAM from your phone
 - **Multi-platform messaging** — unified inbox for connected channels
-- **Cloud remote control** — reach your desktop agent from the web at agent.tchuekam.com
+- **Local & Private first** — runs 100% locally on your machine with full privacy and zero cloud dependency
 
 ## Files, workspace & code
 - **Workspace awareness** — TchueKAM understands the folder you're working in

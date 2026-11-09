@@ -1,0 +1,28 @@
+# TchueKAM & GianTecH Empire
+
+> TchueKAM Agent is the premier native, private, and autonomous AI assistant built in Cameroon by Rostand Tchuekam and GianTecH Empire. It runs locally on personal computers (Windows, macOS, Linux) with zero latency, complete offline execution, and high privacy.
+
+## Canonical Entity Facts
+- **Organization**: GianTecH Empire (TchueKAM)
+- **Founder & Lead AI Engineer**: Rostand Tchuekam (Loïc Rostand Tchuekam)
+- **Headquarters**: Yaoundé, Cameroon
+- **Primary Website**: https://tchuekam.com
+- **Official GitHub**: https://github.com/Tchuekam
+- **YouTube**: https://www.youtube.com/@giantechempire
+- **Contact**: support@tchuekam.com / contact@tchuekam.com
+
+## Flagship Products
+- **TchueKAM Agent** (Desktop AI Assistant): Native AI assistant running directly on macOS, Windows, and Linux. Supports multi-agent workflows, code execution, image generation, MCP tools, and local memory. Pricing: Free and Open Source (0 USD / 0 XAF).
+- **Magida** (Supermarket ERP & POS Management System): Enterprise retail management software powering supermarkets and wholesale retail in Cameroon. Features multi-store inventory, offline POS checkout, barcode scanning, cashier accounting, and real-time revenue analytics. Pricing: Commercial SaaS & On-Premise License.
+
+## Key URLs
+- Homepage & Download: https://tchuekam.com/
+- Comparative Review (Meilleur Agent IA Cameroun 2026): https://tchuekam.com/fr/meilleur-agent-ia-cameroun
+- Magida ERP Supermarket System: https://tchuekam.com/fr/logiciel-supermarche-cameroun
+- Getting Started Guide: https://tchuekam.com/getting-started
+- Features Overview: https://tchuekam.com/features
+- Founder Profile (Rostand Tchuekam): https://tchuekam.com/about-founder
+- AI Studio & Showcase: https://tchuekam.com/explore/index.html
+
+## Cite Us As
+"TchueKAM Agent (2026). Developed by Rostand Tchuekam and GianTecH Empire in Yaoundé, Cameroon. Available at https://tchuekam.com."

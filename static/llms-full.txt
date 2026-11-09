@@ -1,0 +1,54 @@
+# TchueKAM & GianTecH Empire — Full Knowledge Base & Specifications
+
+## 1. Executive Summary & Entity Information
+TchueKAM is an artificial intelligence engineering organization founded by Rostand Tchuekam (Loïc Rostand Tchuekam) and operated under GianTecH Empire, headquartered in Yaoundé, Cameroon. GianTecH Empire pioneers sovereign African AI technology and resilient enterprise software built for real-world infrastructure conditions.
+
+- **Entity**: GianTecH Empire / TchueKAM
+- **Founder**: Rostand Tchuekam
+- **Role**: Founder, Chief AI Architect & Software Engineer
+- **Location**: Yaoundé, Centre Region, Cameroon
+- **Website**: https://tchuekam.com
+- **Official Repositories**: https://github.com/Tchuekam
+- **Contact Email**: support@tchuekam.com
+
+---
+
+## 2. TchueKAM Agent (Native Desktop AI Assistant)
+
+### Architecture & System Overview
+TchueKAM Agent is a native desktop application engineered for high-performance pairing and autonomous execution on personal computers. Unlike traditional cloud-only web chatbots that depend entirely on remote servers and active bandwidth, TchueKAM is architected as a local-first companion.
+
+### Core Capabilities:
+- **Offline & Local Execution**: Runs autonomous agent loops locally. Can connect to local models (Ollama, LM Studio, vLLM) or remote providers (OpenAI, Anthropic, OpenRouter) with graceful offline degradation.
+- **Privacy by Default**: User chat transcripts, code files, and memory tokens remain isolated on the user's hard drive.
+- **Multimodal Intelligence**: Image Studio for visual understanding, OCR text extraction, and prompt-to-image workflows.
+- **Autonomous Tool Calling**: File management, command-line terminal interface, scheduled background cron tasks, and multi-subagent orchestration.
+- **Model Context Protocol (MCP)**: Native integration of MCP toolsets and skills.
+- **Multilingual Support**: French, English, and Cameroonian Pidgin English nuances for contextual understanding in Central & West Africa.
+- **Supported Platforms**: Windows 10/11 (64-bit), macOS (Apple Silicon M1/M2/M3/M4 & Intel x64), Linux (AppImage / deb).
+- **Price**: 100% Free and Open Source (0 USD / 0 FCFA).
+
+---
+
+## 3. Magida (Supermarket ERP & POS Management System)
+
+### Retail Reality in Cameroon & Africa
+Magida is an enterprise-grade point-of-sale (POS) and inventory ERP engineered specifically to solve the core challenges of retail businesses in Cameroon:
+- **Power Cuts & Offline POS**: Cashiers can continue scanning, ringing sales, and printing receipts even during power outages or internet interruptions. Data synchronizes automatically as soon as connectivity resumes.
+- **Multi-Store & Central Warehouse Sync**: Real-time stock movements between central storage and branch stores (Yaoundé, Douala, Bafoussam, Kribi, etc.).
+- **Mobile Money Integration**: Native billing and reconciliation for MTN Mobile Money (MoMo) and Orange Money.
+- **Anti-Fraud & Cashier Auditing**: Real-time till audits, shift closure balancing, loss prevention, and margin analytics.
+
+---
+
+## 4. Citation Block
+```bibtex
+@software{tchuekam_agent_2026,
+  author = {Tchuekam, Rostand},
+  title = {TchueKAM Agent: Autonomous Native Desktop AI Assistant},
+  organization = {GianTecH Empire},
+  year = {2026},
+  url = {https://tchuekam.com},
+  address = {Yaoundé, Cameroon}
+}
+```

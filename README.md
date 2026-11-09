@@ -2,7 +2,7 @@
 
 Official documentation for [TchueKAM Agent](https://tchuekam.com), built with [Docusaurus](https://docusaurus.io).
 
-Lives at **[docs.tchuekam.com](https://docs.tchuekam.com)**.
+Lives at **[tchuekam.com](https://tchuekam.com)**.
 
 ## Develop locally
 
@@ -32,7 +32,7 @@ The Changelog page (`docs/changelog.mdx`) renders `<Changelog />`, which fetches
 |---|---|
 | Windows, macOS, Linux | Static files in `static/`, served from this site (`/TchueKAM-Setup.exe`, …) |
 | Android | The APK attached to a GitHub release of [`Tchuekam/tchuekam-desktop`](https://github.com/Tchuekam/tchuekam-desktop/releases) |
-| iPhone / iPad, any browser | The Web App at `https://agent.tchuekam.com` (`WEB_APP_URL` in `src/components/downloads.ts`) |
+| iPhone / iPad, any browser | Web App (Coming soon) |
 
 The primary button follows the visitor's platform (Android → APK, iPhone/iPad → Web App, otherwise the matching desktop installer).
 
@@ -83,6 +83,6 @@ That's it. Push to `main`, GitHub Actions builds and deploys to GitHub Pages wit
 
 ## DNS
 
-`docs.tchuekam.com` → CNAME → `tchuekam.github.io`
+`tchuekam.com` on Vercel
 
 (See the project SETUP.md for full DNS instructions.)

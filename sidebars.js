@@ -14,7 +14,13 @@ const sidebars = {
       type: 'category',
       label: 'Ecosystem & Founder',
       collapsed: false,
-      items: ['about-founder', 'magida', 'resources'],
+      items: [
+        'about-founder',
+        'magida',
+        'meilleur-agent-ia-cameroun',
+        'logiciel-supermarche-cameroun',
+        'resources'
+      ],
     },
     {
       type: 'category',
