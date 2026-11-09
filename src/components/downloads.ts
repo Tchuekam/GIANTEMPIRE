@@ -68,9 +68,9 @@ export interface AndroidApk {
   sha256?: string;
 }
 
-/** Only an actual "no APK anywhere" answer may hide the download. Not knowing must not. */
+/** Only an actual available APK may activate the download. */
 export function isApkDownloadable(apk: AndroidApk): boolean {
-  return apk.status !== 'unpublished';
+  return apk.status === 'available';
 }
 
 interface GhAsset {
@@ -93,9 +93,9 @@ function formatBytes(bytes?: number): string | undefined {
   return `${Math.max(1, Math.round(bytes / 1024))} KB`;
 }
 
-/** GitHub resolves this to the asset on the *latest* release, and 404s if it is not there. */
+/** Fallback URL pointing safely to the releases page rather than a dead 404 asset. */
 export function apkFallbackUrl(repo: string): string {
-  return `https://github.com/${repo}/releases/latest/download/${ANDROID_APK_NAME}`;
+  return `https://github.com/${repo}/releases`;
 }
 
 /**
