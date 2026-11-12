@@ -1,6 +1,11 @@
-// Self-hosted direct download component for TchueKAM Agent.
+// Download component for TchueKAM Agent.
 //
-// Desktop installers: direct root static installer endpoints (single source of truth).
+// Desktop installers: the assets attached to a published GitHub release.
+//          They used to be static files under static/, which is how the site
+//          came to serve a 66-byte text file named TchueKAM-Setup.exe and
+//          Windows answered "This app can't run on your PC" for every visitor.
+//          Resolving them from the release means the page cannot offer an
+//          installer that does not exist.
 // Android: the APK attached to a GitHub release; see downloads.ts for how its
 //          availability is checked, so the page never offers a dead link.
 // Web:     the hosted web app, which also installs to a phone's home screen.
@@ -9,6 +14,7 @@ import React, {useEffect, useState} from 'react';
 import Link from '@docusaurus/Link';
 import {
   ANDROID_APK_NAME,
+  DESKTOP_ASSETS,
   MOBILE_GUIDE_PATH,
   WEB_APP_URL,
   detectOS,
@@ -17,38 +23,10 @@ import {
   track,
   trackDownload,
   useAndroidApk,
+  useDesktopDownloads,
   useWebApp,
 } from './downloads';
-import type {AndroidApk, OS} from './downloads';
-
-type DesktopOS = 'windows' | 'macos-arm64' | 'macos-x64' | 'linux';
-
-const DIRECT_DOWNLOADS: Record<DesktopOS, {url: string; filename: string; label: string; type: string}> = {
-  'windows': {
-    url: '/TchueKAM-Setup.exe',
-    filename: 'TchueKAM-Setup.exe',
-    label: 'Windows (64-bit)',
-    type: '.exe installer',
-  },
-  'macos-arm64': {
-    url: '/TchueKAM-Mac-arm64.dmg',
-    filename: 'TchueKAM-Mac-arm64.dmg',
-    label: 'macOS (Apple Silicon)',
-    type: '.dmg',
-  },
-  'macos-x64': {
-    url: '/TchueKAM-Mac-x64.dmg',
-    filename: 'TchueKAM-Mac-x64.dmg',
-    label: 'macOS (Intel)',
-    type: '.dmg',
-  },
-  'linux': {
-    url: '/TchueKAM-Linux.AppImage',
-    filename: 'TchueKAM-Linux.AppImage',
-    label: 'Linux',
-    type: '.AppImage',
-  },
-};
+import type {AndroidApk, DesktopDownloads, DesktopOS, OS} from './downloads';
 
 // Short platform name for the primary button, e.g. "Download for macOS".
 const DESKTOP_NAME: Record<DesktopOS, string> = {
@@ -70,7 +48,7 @@ interface Cta {
 
 // The one button the visitor most likely wants, based on what they are using. Null means a phone
 // visitor with nothing to offer yet (no APK published and the web app unreachable).
-function primaryCta(os: OS, apk: AndroidApk, webReady: boolean): Cta | null {
+function primaryCta(os: OS, apk: AndroidApk, webReady: boolean, desktop: DesktopDownloads): Cta | null {
   if (os === 'android' && isApkDownloadable(apk)) {
     return {
       href: apk.url,
@@ -89,12 +67,16 @@ function primaryCta(os: OS, apk: AndroidApk, webReady: boolean): Cta | null {
       onClick: () => track('web_app_opened', {os}),
     };
   }
-  const direct = DIRECT_DOWNLOADS[os];
+  // Offer this visitor's own installer when the release carries it. We do not
+  // fall back to another platform's build: handing a Mac user a .exe is a
+  // worse answer than telling them it is not ready.
+  const spec = DESKTOP_ASSETS[os];
+  const asset = desktop.assets[os];
+  if (!spec || !asset) return null;
   return {
-    href: direct.url,
-    download: direct.filename,
-    label: `⬇ Download for ${DESKTOP_NAME[os]}`,
-    onClick: () => trackDownload(direct.filename, direct.url, os, 'v1.0.0'),
+    href: asset.url,
+    label: `⬇ Download for ${DESKTOP_NAME[os]}${asset.size ? ` (${asset.size})` : ''}`,
+    onClick: () => trackDownload(spec.filename, asset.url, os, desktop.version),
   };
 }
 
@@ -132,6 +114,7 @@ export function StaticDownloadSection() {
   const [os, setOS] = useState<OS>('windows');
   const apk = useAndroidApk();
   const web = useWebApp();
+  const desktop = useDesktopDownloads();
 
   useEffect(() => {
     setOS(detectOS());
@@ -139,7 +122,8 @@ export function StaticDownloadSection() {
 
   const apkReady = isApkDownloadable(apk);
   const webReady = isWebAppAvailable(web);
-  const primary = primaryCta(os, apk, webReady);
+  const primary = primaryCta(os, apk, webReady, desktop);
+  const desktopSpec = DESKTOP_ASSETS[os as DesktopOS];
 
   return (
     <div style={{padding: '1.5rem', border: '1px solid rgba(0,242,254,0.15)', borderRadius: 12, background: 'rgba(0,242,254,0.04)', minWidth: 0, maxWidth: '100%', boxSizing: 'border-box'}}>
@@ -153,7 +137,7 @@ export function StaticDownloadSection() {
           fontWeight: 600,
           letterSpacing: 0.5,
         }}>
-          v1.0.0
+          {desktop.version ?? (desktop.status === 'checking' ? '…' : '—')}
         </span>
         <span style={{opacity: 0.6, fontSize: 14}}>
           Latest release
@@ -181,7 +165,9 @@ export function StaticDownloadSection() {
             className="button button--lg tchuekam-cta tchuekam-cta-secondary tchuekam-cta-disabled"
             aria-disabled="true"
           >
-            📱 Mobile app coming soon
+            {desktopSpec
+              ? `${desktopSpec.label} build coming soon`
+              : '📱 Mobile app coming soon'}
           </span>
         )}
 
@@ -211,18 +197,25 @@ export function StaticDownloadSection() {
           </tr>
         </thead>
         <tbody>
-          {Object.entries(DIRECT_DOWNLOADS).map(([key, item]) => (
-            <PlatformRow key={key} label={item.label} type={item.type}>
-              <a
-                href={item.url}
-                download={item.filename}
-                onClick={() => trackDownload(item.filename, item.url, key, 'v1.0.0')}
-                style={linkStyle}
-              >
-                Download →
-              </a>
-            </PlatformRow>
-          ))}
+          {(Object.keys(DESKTOP_ASSETS) as DesktopOS[]).map((key) => {
+            const spec = DESKTOP_ASSETS[key];
+            const asset = desktop.assets[key];
+            return (
+              <PlatformRow key={key} label={spec.label} type={spec.type} size={asset?.size}>
+                {asset ? (
+                  <a
+                    href={asset.url}
+                    onClick={() => trackDownload(spec.filename, asset.url, key, desktop.version)}
+                    style={linkStyle}
+                  >
+                    Download →
+                  </a>
+                ) : (
+                  <ComingSoon />
+                )}
+              </PlatformRow>
+            );
+          })}
 
           <PlatformRow label="Android" type=".apk" size={apk.status === 'available' ? apk.size : undefined}>
             {apkReady ? (
@@ -278,7 +271,8 @@ export function StaticDownloadSection() {
       )}
 
       <p style={{opacity: 0.6, fontSize: 13, marginTop: 12, ...wrapToCard}}>
-        All downloads are verified and hosted directly by TchueKAM.
+        Every installer is published as a release asset and checked for a valid
+        executable header and realistic size before release.
         {apkReady && ' On Android, your phone asks once to allow installs from your browser, because the app is distributed outside the Play Store.'}
       </p>
     </div>

@@ -132,6 +132,148 @@ export function findAndroidApk(releases: unknown, repo: string): AndroidApk {
   return {status: 'unpublished', url: fallback};
 }
 
+// ---------------------------------------------------------------------------
+// Shared releases lookup
+// ---------------------------------------------------------------------------
+//
+// Both the desktop installers and the Android APK answer the same question:
+// "what does the newest published release actually contain?" Asking once keeps
+// the page to a single unauthenticated GitHub call, which matters because that
+// quota is per visitor IP, not per site.
+
+let releasesRequest: Promise<unknown> | null = null;
+
+export function fetchReleases(repo: string): Promise<unknown> {
+  if (releasesRequest) return releasesRequest;
+  releasesRequest = fetch(`https://api.github.com/repos/${repo}/releases?per_page=30`, {
+    headers: {Accept: 'application/vnd.github+json'},
+  })
+    .then((res) => (res.ok ? res.json() : Promise.reject(new Error(String(res.status)))))
+    .catch((err) => {
+      // Let a later render try again rather than caching the failure forever.
+      releasesRequest = null;
+      throw err;
+    });
+  return releasesRequest;
+}
+
+// ---------------------------------------------------------------------------
+// Desktop installers
+// ---------------------------------------------------------------------------
+//
+// These used to be static files committed under static/. That is how the site
+// came to serve a 66-byte text file named TchueKAM-Setup.exe: the placeholder
+// was committed before the real installer existed, nothing ever replaced it,
+// and Windows told every visitor "This app can't run on your PC".
+//
+// They are now resolved the same way the APK already was - from the release
+// that actually carries them - so the site cannot advertise an installer that
+// does not exist, and cannot serve one it did not get from a release.
+
+export type DesktopOS = 'windows' | 'macos-arm64' | 'macos-x64' | 'linux';
+
+export interface DesktopAssetSpec {
+  /** Asset name electron-builder produces; this is what we look for. */
+  filename: string;
+  label: string;
+  type: string;
+}
+
+export const DESKTOP_ASSETS: Record<DesktopOS, DesktopAssetSpec> = {
+  'windows': {filename: 'TchueKAM-Setup.exe', label: 'Windows (64-bit)', type: '.exe installer'},
+  'macos-arm64': {filename: 'TchueKAM-Mac-arm64.dmg', label: 'macOS (Apple Silicon)', type: '.dmg'},
+  'macos-x64': {filename: 'TchueKAM-Mac-x64.dmg', label: 'macOS (Intel)', type: '.dmg'},
+  'linux': {filename: 'TchueKAM-Linux.AppImage', label: 'Linux', type: '.AppImage'},
+};
+
+/**
+ * A desktop installer is tens of megabytes. Anything near this floor is a
+ * placeholder or a truncated upload, and must never be offered as a download.
+ */
+const MIN_INSTALLER_BYTES = 1024 * 1024;
+
+export interface DesktopAsset {
+  url: string;
+  size?: string;
+  sha256?: string;
+}
+
+export interface DesktopDownloads {
+  /**
+   * checking - lookup in flight
+   * ready    - GitHub answered; `assets` holds whatever is genuinely published
+   * unknown  - the lookup failed (offline, rate limited); we cannot tell
+   */
+  status: 'checking' | 'ready' | 'unknown';
+  version?: string;
+  assets: Partial<Record<DesktopOS, DesktopAsset>>;
+}
+
+/** Where to send someone when we have nothing specific to offer. */
+export function releasesPageUrl(repo: string): string {
+  return `https://github.com/${repo}/releases`;
+}
+
+/**
+ * Read the desktop installers out of the newest published release that has any.
+ *
+ * Only assets served from this repo's release downloads are trusted, and an
+ * asset below the size floor is treated as absent rather than offered.
+ */
+export function findDesktopAssets(releases: unknown, repo: string): DesktopDownloads {
+  if (!Array.isArray(releases)) return {status: 'unknown', assets: {}};
+
+  const trusted = `https://github.com/${repo}/releases/download/`;
+
+  for (const release of releases as GhRelease[]) {
+    if (!release || release.draft || release.prerelease) continue;
+    const published = Array.isArray(release.assets) ? release.assets : [];
+    const assets: Partial<Record<DesktopOS, DesktopAsset>> = {};
+
+    for (const os of Object.keys(DESKTOP_ASSETS) as DesktopOS[]) {
+      const found = published.find((a) => a?.name === DESKTOP_ASSETS[os].filename);
+      const url = found?.browser_download_url;
+      if (!found || typeof url !== 'string' || !url.startsWith(trusted)) continue;
+      if ((found.size ?? 0) < MIN_INSTALLER_BYTES) continue;
+      assets[os] = {
+        url,
+        size: formatBytes(found.size),
+        sha256: found.digest?.startsWith('sha256:') ? found.digest.slice('sha256:'.length) : undefined,
+      };
+    }
+
+    if (Object.keys(assets).length > 0) {
+      return {status: 'ready', version: release.tag_name, assets};
+    }
+  }
+
+  // GitHub answered and no published release carries an installer.
+  return {status: 'ready', assets: {}};
+}
+
+/** Which desktop installers are published, and where to get them. */
+export function useDesktopDownloads(): DesktopDownloads {
+  const {siteConfig} = useDocusaurusContext();
+  const repo = (siteConfig.customFields?.githubRepo as string | undefined) || DEFAULT_REPO;
+  const [state, setState] = useState<DesktopDownloads>({status: 'checking', assets: {}});
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchReleases(repo)
+      .then((releases) => {
+        if (!cancelled) setState(findDesktopAssets(releases, repo));
+      })
+      .catch(() => {
+        if (!cancelled) setState({status: 'unknown', assets: {}});
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [repo]);
+
+  return state;
+}
+
 const CACHE_TTL_MS = 10 * 60 * 1000;
 
 function readCache(key: string): AndroidApk | null {
@@ -178,10 +320,7 @@ export function useAndroidApk(): AndroidApk {
       return undefined;
     }
 
-    fetch(`https://api.github.com/repos/${repo}/releases?per_page=30`, {
-      headers: {Accept: 'application/vnd.github+json'},
-    })
-      .then((res) => (res.ok ? res.json() : Promise.reject(new Error(String(res.status)))))
+    fetchReleases(repo)
       .then((releases) => {
         const found = findAndroidApk(releases, repo);
         if (found.status === 'available' || found.status === 'unpublished') writeCache(cacheKey, found);
