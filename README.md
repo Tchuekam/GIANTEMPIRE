@@ -30,11 +30,29 @@ The Changelog page (`docs/changelog.mdx`) renders `<Changelog />`, which fetches
 
 | Platform | Where it comes from |
 |---|---|
-| Windows, macOS, Linux | Static files in `static/`, served from this site (`/TchueKAM-Setup.exe`, …) |
+| Windows, macOS, Linux | The installers attached to a GitHub release of [`Tchuekam/tchuekam-desktop`](https://github.com/Tchuekam/tchuekam-desktop/releases) |
 | Android | The APK attached to a GitHub release of [`Tchuekam/tchuekam-desktop`](https://github.com/Tchuekam/tchuekam-desktop/releases) |
 | iPhone / iPad, any browser | Web App (Coming soon) |
 
 The primary button follows the visitor's platform (Android → APK, iPhone/iPad → Web App, otherwise the matching desktop installer).
+
+### Installers are never committed here
+
+They used to be. A placeholder named `TchueKAM-Setup.exe` was committed to `static/`
+before the real installer existed, nothing ever replaced it, and for every visitor
+who clicked Download, Windows answered *"This app can't run on your PC"* — the file
+was 66 bytes of text:
+
+```
+# TchueKAM Agent Desktop Windows Installer (x64)
+# Version: 1.0.0
+```
+
+So the desktop installers are now resolved from the release that actually carries
+them, exactly like the Android APK. A platform shows "Coming soon" until a
+published release has its asset, and an asset below 1 MB is treated as absent
+rather than offered. Publishing a release is all it takes to turn a platform on —
+no file lands in this repository and no redeploy is needed.
 
 ### The Web App must be reachable
 

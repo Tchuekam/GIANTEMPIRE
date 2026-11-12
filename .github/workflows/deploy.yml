@@ -20,6 +20,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # A placeholder named TchueKAM-Setup.exe once shipped from static/ and
+      # gave every Windows visitor "This app can't run on your PC". This reads
+      # the bytes of anything named like an installer and fails the deploy if
+      # it is not really one.
+      - name: Check no placeholder installers are committed
+        run: python3 scripts/check-no-placeholder-installers.py
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
